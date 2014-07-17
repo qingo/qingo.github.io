@@ -37,3 +37,5 @@ node_modules/
 md2html.js
 parser.js
 SyntacticalParser.js
+html.prefix
+html.suffix

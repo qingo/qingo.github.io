@@ -1,0 +1,17 @@
+<h1>$parse</h1>
+
+<h2>根作用域服务</h2>
+
+<h3>服务依赖</h3>
+
+<ul><li>$filter</li><li>$sniffer</li><li>$log</li></ul>
+
+<h3>this.$get函数</h3>
+
+<pre><code>this.$get = [&#39;$filter&#39;, &#39;$sniffer&#39;, &#39;$log&#39;, function ($filter, $sniffer, $log) {
+    return {{Function}}  
+}</code></pre>
+
+<h3>问题</h3>
+
+<p>到底都能解析哪些规则？</p>

@@ -1,0 +1,40 @@
+<h1>$q</h1>
+
+<h2>根作用域服务</h2>
+
+<h3>服务依赖</h3>
+
+<ul><li>$rootScope</li><li>$exceptionHandler</li></ul>
+
+<h3>this.$get函数</h3>
+
+<pre><code>this.$get = [&#39;$rootScope&#39;, &#39;$exceptionHandler&#39;, function ($rootScope, $exceptionHandler) {
+    return qFactory(function (callback) {
+        $rootScope.$evalAsync(callback);
+    }, $exceptionHandler);
+}];</code></pre>
+
+<h3>结构</h3>
+
+<pre><code>{
+    defer: {{
+       function(){
+            return {
+                resolve: {{Function}},
+                reject: {{Function}},
+                notify: {{Function}},
+                promise: 
+                     {
+                        then: {{Function}},
+                        catch: {{Function}},
+                        finally: {{Function}}
+                    },
+            }
+
+        }
+    }},
+    reject: {{Function}},
+    when: {{Function}},
+    all: {{Function}}
+
+}</code></pre>

@@ -1,0 +1,99 @@
+<h1>$compile</h1>
+
+<h2>根作用域服务</h2>
+
+<h3>服务依赖</h3>
+
+<ul><li>$injector</li><li>$interpolate</li><li>$exceptionHandler</li><li>$http</li><li>$templateCache</li><li>$controller</li><li>$rootScope</li><li>$document</li><li>$sce</li><li>$animate</li><li>$$sanitizeUri</li></ul>
+
+<h3>结构</h3>
+
+<pre><code>{f
+    @: {
+        $injector: %o,
+        $interpolate: %f,
+        $exceptionHandler: %f,
+        $http: %f,
+        $templateCache: %o,
+        $controller: %f,
+        $rootScope: %o,
+        $document: %o,
+        $sce: %o,
+        $animate: %o,
+        $$sanitizeUrl: %f
+    },
+    ^: {
+        Attributes: {f
+            @element: %DOMElement,
+            @attr: %DOMAttribute,
+            $$element: @element,
+            $attr: @attr|{},
+            --: {
+
+            }
+        },
+        startSymbol: &#39;{{&#39;,
+        endSymbol: &#39;}}&#39;,
+        denormalizeTemplate: {f
+            @$: %A,
+            =: $
+        },
+        compile: {f
+            @: {
+                $compileNodes: [%DOMNode],
+                transcludeFn: %f,
+                maxPriority: %n,
+                ignoreDirective: %b,
+                previousCompileContext: %
+            },
+            ^: {
+                compositeLinkFn: %f,
+                publicLinkFn: {f
+                }
+            },
+            -: {
+
+            },
+            =: publicLinkFn
+        }
+        safeAddClass: {f
+        },
+        compileNodes: {f
+        },
+        createBoundTranscludeFn: {f
+        },
+        collectDirectives: {f
+        },
+        groupScan: {f
+        },
+        groundElementsLinkFnWrapper: {f
+        },
+        applyDirectivesToNode: {f
+        },
+        markDirectivesAsIsolate: {f
+        },
+        addDirective: {f
+        },
+        mergeTemplateAttributes: {f
+        },
+        compileTemplateUrl: {f
+        },
+        byPriority: {f
+        },
+        assertNoDuplicate: {f
+        },
+        addTextInterpolateDirective: {f
+        },
+        wrapTemplate: {f
+        },
+        getTrustedContext: {f
+        },
+        addAttrInterpolateDirective: {f
+        },
+        replaceWith: {f
+        },
+        cloneAndAnnotateFn: {f
+        }
+    },
+    =: compile
+}</code></pre>

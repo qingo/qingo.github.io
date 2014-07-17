@@ -1,0 +1,19 @@
+<h1>$exceptionHandler</h1>
+
+<h2>根作用域服务</h2>
+
+<h3>服务依赖</h3>
+
+<ul><li>$log</li></ul>
+
+<h3>this.$get函数</h3>
+
+<pre><code>this.$get = [&#39;$log&#39;, function ($log) {
+    return function (exception, cause) {
+        $log.error.apply($log, arguments);
+    };
+}];</code></pre>
+
+<h3>问题</h3>
+
+<p>参数个数，同$log中的问题</p>

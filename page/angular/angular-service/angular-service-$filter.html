@@ -1,0 +1,17 @@
+<h1>$filter</h1>
+
+<h2>根作用域服务</h2>
+
+<h3>服务依赖</h3>
+
+<ul><li>$injector</li></ul>
+
+<h3>this.$get函数</h3>
+
+<pre><code> this.$get = [&#39;$injector&#39;, function ($injector) {
+    return function (name) {
+        return $injector.get(name + &#39;Filter&#39;);
+    };
+ }];</code></pre>
+
+<h3>问题</h3>

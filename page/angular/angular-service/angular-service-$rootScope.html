@@ -1,0 +1,77 @@
+<h1>$rootScope</h1>
+
+<h2>根作用域服务</h2>
+
+<h3>服务依赖</h3>
+
+<ul><li>$injector</li><li>$exceptionHandler</li><li>$parse</li><li>$browser</li></ul>
+
+<h3>this.$get函数</h3>
+
+<pre><code>this.$get = [&#39;$injector&#39;, &#39;$exceptionHandler&#39;, &#39;$parse&#39;, &#39;$browser&#39;,
+    function ($injector, $exceptionHandler, $parse, $browser) {
+        return new function Scope() {
+                                   this.$id = nextUid();
+                                   this.$$phase = this.$parent = this.$$watchers =
+                                       this.$$nextSibling = this.$$prevSibling =
+                                           this.$$childHead = this.$$childTail = null;
+                                   this[&#39;this&#39;] = this.$root = this;
+                                   this.$$destroyed = false;
+                                   this.$$asyncQueue = [];
+                                   this.$$postDigestQueue = [];
+                                   this.$$listeners = {};
+                                   this.$$listenerCount = {};
+                                   this.$$isolateBindings = {};
+                               }
+}]</code></pre>
+
+<h3>结构</h3>
+
+<pre><code>{
+    $id: {{number}},
+    $$phase: {{null|}},
+    $parent: {{null|Scope}},
+    $$watchers: 
+        [
+            {
+                fn: {{Function}},
+                last: {{Function}},
+                get: {{Function}},
+                exp: {{Exp}},
+                eq: {{boolean}}
+            }
+        ],
+    $$nextSibling: {{null|Scope}},
+    $$prevSibling: {{null|Scope}},
+    $$childHead: {{null|Scope}},
+    $$childTail: {{null|Scope}},
+    $root: {{null|Scope}},
+    &#39;this&#39;: {{Scope}},
+    $$destroyed: {{boolean}},
+    $$asyncQueue: {{Array}},
+    $$postDigestQueue: {{Array}},
+    $$listeners: {{Object}},
+    $$listenerCount: {{Object}},
+    $$isolateBindings: {{Object}},
+    __proto__:{
+        constructor: Scope,
+        $new: {{Function}},
+        $watch: {{Function}},
+        $watchGroup: {{Function}},
+        $watchCollection: {{Function}},
+        $digest: {{Function}},
+        $destroy: {{Function}},
+        $eval: {{Function}},
+        $evalAsync: {{Function}},
+        $$postDigest: {{Function}},
+        $apply: {{Function}},
+        $on: {{Function}},
+        $emit: {{Function}},
+        $broadcast: {{Function}}
+    }
+}</code></pre>
+
+<h3>问题</h3>
+
+<p>$watch监听的函数式怎么做的轮询
+$$asyncQueue用来缓冲的，那么为什么是$q依赖于$rooScope，而不是$rootScope依赖$q,这样就不需要asyncQueue了。</p>

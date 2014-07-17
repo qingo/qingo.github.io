@@ -67,5 +67,6 @@ publicLinkFn 在执行时调用$compile阶段产生的compositeLinkFn函数，</
 对于一个node来说，最多可能有两个函数，分别是nodeLinkFn和childLinkFn，nodeLinkFn为执行当前node的函数，childLinkFn为执行下一代node的函数
 nodeLinkFn为applyDirectivesToNode的返回值，childLinkFn函数为递归调用的compileNodes的返回值。
 当nodeLinkFn存在时，执行nodeLinkFn，其中该函数的第一个参数为childLinkFn，这样吧子代node的执行放在nodeLinkFn内部</li><li>compositeLinkFn的调用，有四个参数，其中publicLinkFn函数中的的调用方式是
-<code>compositeLinkFn(scope,$linkNode,$linkNode)</code></li></ol></body>
+<code>compositeLinkFn(scope,$linkNode,$linkNode)</code></li></ol>
+</body>
 </html>

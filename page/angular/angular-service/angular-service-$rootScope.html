@@ -85,18 +85,21 @@
 <ol><li>$id 
 由统一的id生成器 nextUid自动生成，用于标识每个不同的Scope实例</li><li>$$phase
 标识该scope正在进行的操作</li><li>$root
-根Scope实例</li><li>this</li><li>$parent<br/>用来描述Scope实例间的关系，指向父Scope实例，即：产生此Scope实例的Scope实例，一般使用$new方法来产生</li><li>$nextSibling
-用来描述Scope实例间的关系，指向Scope实例的上一个Scope实例。</li><li>$prevSibling
-用来描述Scope实例间的关系，指向Scope实例的下一个Scope实例。</li><li>$$childHead</li><li><p>$$childTail</p></li><li><p>$$$watchers
-观察者对象</p></li><li><p>$$destroyed</p></li><li>$$asyncQueue</li><li>$$postDigestQueue</li><li>$$listeners</li><li>$$listenerCount</li><li>$$isolateBindings</li></ol>
+根Scope实例</li><li>this
+Scope实例本身。</li><li>$parent<br/>用来描述Scope实例间的关系，指向父Scope实例，即：产生此Scope实例的Scope实例，一般使用$new方法来产生</li><li>$$nextSibling
+用来描述Scope实例间兄弟的关系，指向Scope实例的上一个兄弟Scope实例。</li><li>$$prevSibling
+用来描述Scope实例间兄弟的关系，指向Scope实例的下一个兄弟Scope实例。</li><li>$$childHead
+用来描述Scope实例间子Scope实例的关系，指向Scope实例的下一个子Scope实例中的第一个，主要用来维护子Scope实例的兄弟关系。</li><li>$$childTail
+用来描述Scope实例间子Scope实例的关系，指向Scope实例的下一个子Scope实例中的最后一个，主要用来维护子Scope实例的兄弟关系。</li><li><p>$$$watchers
+观察者属性</p></li><li><p>$$destroyed</p></li><li>$$asyncQueue</li><li>$$postDigestQueue</li><li>$$listeners
+监听者属性</li><li>$$listenerCount</li><li>$$isolateBindings</li></ol>
 
 <h3>Scope对象的方法</h3>
 
 <ol><li>$new
-用于创建新的Scope实例，
-其中可以传递一个可选的参数<code>isolate</code>,
-当<code>isolate</code>为存在时，生成一个没有继承关系的全新的Scope实例，
-当<code>isolate</code>不存在时，先产生一个创建子作用域实例的构造方法<code>$$childScopeClass</code>，用于创建新的继承自当前Scope实例的Scope实例，新的Scope实例的<code>$$childScopeClass</code>方法会被覆盖为<code>null</code></li><li>$watch</li><li>$watchCollection</li><li>$digest</li><li>$destroy</li><li>$eval</li><li>$evalAsync</li><li>$$postDigest</li><li>$apply</li><li>$on</li><li>$emit</li><li>$broadcast</li></ol>
+用于创建新的Scope实例，其中可以传递一个可选的参数<code>isolate</code>,
+创建过程可以分为两步；<br/>第一步：创建新的Scope实例，其中<ol><li>当<code>isolate</code>为存在时，生成一个没有继承关系的全新的Scope实例，</li><li>当<code>isolate</code>不存在时，先产生一个创建子作用域实例的构造方法<code>$$childScopeClass</code>，用于创建新的继承自当前Scope实例的Scope实例，新的Scope实例的<code>$$childScopeClass</code>方法会被覆盖为<code>null</code><br/>第二步：维护Scope实例的关系
+不管<code>isolate</code>为<code>true</code>或<code>false</code>新创建的Scope实例都会被追加到子Scope的尾部，即$$childTail上，并维护好子Scope实例的兄弟关系。</li></ol></li><li><p>$watch</p></li><li><p>$watchCollection</p></li><li>$digest</li><li>$destroy</li><li>$eval</li><li>$evalAsync</li><li>$$postDigest</li><li>$apply</li><li>$on</li><li>$emit</li><li>$broadcast</li></ol>
 
 <h3>问题</h3>
 

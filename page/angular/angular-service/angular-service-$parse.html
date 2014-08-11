@@ -9,20 +9,84 @@
 <body>
 <h1>$parse</h1>
 
-<h2>根作用域服务</h2>
+<h5>根作用域服务</h5>
 
-<h3>服务依赖</h3>
+<h2>服务依赖</h2>
 
 <ul><li>$filter</li><li>$sniffer</li><li>$log</li></ul>
 
-<h3>this.$get函数</h3>
+<h2>this.$get函数</h2>
 
 <pre><code>this.$get = [&#39;$filter&#39;, &#39;$sniffer&#39;, &#39;$log&#39;, function ($filter, $sniffer, $log) {
     return {{Function}}  
 }</code></pre>
 
-<h3>问题</h3>
+<h2>代码</h2>
 
-<p>到底都能解析哪些规则？</p>
+<p>分两个部分Lexer(词法解析器)和Parser(语法解析器)</p>
+
+<h3>Lexer属性</h3>
+
+<ol><li>options  选项</li><li>ch       当前的字符</li><li>lastCh   下一个字符</li><li>text     当前字符串</li><li>index    当前序列数</li><li>tokens   标识（暂时叫标识，也找不到更好的翻译，最小的语法单元）序列</li></ol>
+
+<h3>Lexer方法</h3>
+
+<ol><li>lex          解析text字符串为标识序列</li><li>is           参数为chars，判断ch是不是该字符</li><li>was          参数为chars，判断lastCh是不是该字符</li><li>peek         参数为i，默认值为1，获取index向后的第i个字符</li><li>isNumber     判断是否为数字</li><li>isWhitespace 判断是否为空格</li><li>isIdent      判断是否为标识符</li><li>isExpOperator判断是否为表达式符号</li><li>throwError   抛出异常</li><li>readNumber  读取数字</li><li>readIdent   读取标识符</li><li>readString  读取字符串</li></ol>
+
+<h4>this.lex方法详解</h4>
+
+<p>此方法用来把text属性解析成javascript语法的表达式序列
+并把每一个序列<code>token</code>放入到tokens属性中，
+在此方法中，从text的第一位字符开始向后遍历，在循环中解析不同的类型
+lexer并不支持所有的javascript合法字符，它现在支持的有六种<br/>1. 字符串
+2. 数字
+3. 标识符
+4. (){}[].,;:?这几种符号
+5. 空格
+6. 操作符（null、true、false、undefined、+、-、/、%、^、=、===、!==、==、!=、&lt;、&gt;、&amp;&amp;、||、&amp;、|、!）
+直到text被便利结束，返回tokens属性。</p>
+
+<h5>this.readNumber方法详解</h5>
+
+<p>此方法用于读取数字
+无参数
+//todo 不同的number的不同分类</p>
+
+<h6>返回的<code>token</code>的结构</h6>
+
+<pre><code>{
+    index: start
+    text: number
+    literal: true
+    constant: true
+    fn: function(){
+        return number
+    }
+}</code></pre>
+
+<h5>this.readString方法详解</h5>
+
+<p>此方法用于读取字符串，
+参数为quote，其中可能为 <code>&#39;</code>或者<code>&quot;</code>，字符串的开始标识
+从<code>&#39;</code>或者<code>&quot;</code>开始遍历text在遍历中有四种情况处理<br/>1. escape string，如果是则又分两种情况:
+   以u开始的escape string 和特殊的escape string(<code>\n</code>、 <code>\f</code>、 <code>\r</code>、 <code>\t</code>、 <code>\v</code>、 <code>&#39;</code>、 <code>&quot;</code>)
+2. <code>\</code>字符 说明下面是escape string
+3. quote，字符串的结束，把获取到的字符串push到tokens序列中
+4. 其他字符，均可为字符串</p>
+
+<h6>返回的<code>token</code>的结构</h6>
+
+<pre><code>{
+    index: start
+    text:  rawString
+    string: string
+    literal: true
+    constant: true
+    fn: function(){
+        return string
+    }
+}</code></pre>
+
+<h5>this.readIdent方法详解</h5>
 </body>
 </html>

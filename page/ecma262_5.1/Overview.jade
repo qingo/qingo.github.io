@@ -1,0 +1,195 @@
+//
+   Created by Qingo on 2014/8/16.
+   site: http://www.qingo.me
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+    body
+        .en
+            h1 Overview
+            p This section contain a non-mormative overview of the ECMAScript language.
+            p
+                | ECMAScript is an object-oriented programing language for performing computations and
+                | manipilating computational objects within a host environment.
+                | ECMAScript as defined here is not intended to be computationally self-sufficient;
+                | indeed, there are no provisions in this specification for input of external data
+                | or output of computed result.
+                | instead, it is expected that the computational environment of an ECMAScript program will provide
+                | not only the objects and other facilities described in this specification
+                | but also certain environment-specific host objects,
+                | whose descrition and behaviour are beyond the scope of this specification
+                | exception to indicate that they may provide certain properties that can be accessed and
+                | certain functions that can be called from an ECMAScript program.
+            p
+                | A <strong>scripting language</strong> is a programming language that is used to manipulate, customise,
+                | and automate the facilities of an existing system.
+                | In such systems, useful functionality is already available through a user interface,
+                | and the scripting langugage is a mechanism for exposing that functionality to program control.
+                | In this way, the existing is said to provide a host environment of objects and facilities,
+                | which completes the capabilities of the scripting language.
+                | A scripting landuage is intended for use by both professional and non-professional programmers.
+            p
+                | ECMAScript was originally designed tobe a <strong>Web scripting language</strong>,
+                | providing a mechanism to enliven Web pages in browsers and to perform server computation
+                | as part of a Web-based client-server architecture.
+                | ECMAScript can provide core scripting capabilities for a variety of host envirenment.
+            p
+                | Some of the facilities of ECMAScript are similar to those used in other programming languages;
+                | in particular Java, Self, and Scheme as described in:
+            p
+                | Gosling, James, Bill Joy and Guy Steele. The Java Language Specification. Addison Wesley Publishing Co.,1996.
+                | Ungar, David, and Smith, Randall B. Self: The Power of Simplicity. OOPSLA '87 Conference Proceedings, pp.227–241, Orlando, FL, October 1987.
+                | IEEE Standard for the Scheme Programming Language. IEEE Std 1178-1990.
+            h2 Web Scripting
+            p
+                | A web browser provides an ECMAScript host environment for client-side computation including,
+                | for instance, objects that represent windows, menus, pop-ups, dialog boxes, text areas,
+                | anchors, frames, history, cookies, and input/output.
+                | Further, the host envirenment provides a means to attach scripting code to events
+                | such as change of focus, page and image loading, unloading, error and alort, selection, form submission, and mouse actions.
+                | Scripting code appears within the HTML and displayed page is a combination of user interface elements
+                | and fixed and computed text and images.
+                | The scripting code is reactive to user interaction and there is no need for a main program.
+            p
+                | A web server provides a different host environment for server-side computation
+                | including objects representing requests, clients, and files; and mechanisms to lock and share data.
+                | By using browser-side and server-side scripting together, it is possible to distribute computation
+                | between the client and server while a customised user interface for a Web-based application.
+            p
+                | Each Web brower and server that supports ECMAScript supplies its own host environment,
+                | completing the ECMAScript execution environment.
+            h2 Language Overview
+            p
+                | The follow is an informal overview of ECMAScript-not all parts of the language are described.
+                | This overview is not part of the standard proper.
+            p
+                | ECMAScript is object-based: basic language and host facilities are provided by objects,
+                | and ECMAScript program is cluster of communicating objects.
+                | An ECMAScript object is a collection of properties each with zero or more attributes that
+                | determine how each property can be used-for example,
+                | when the Writable attribute for a property is set to fasle,
+                | any attempt by executed ECMAScript code to change the value of the property fails.
+                | Properties are containers that hold other objects, primitive values, or functions.
+                | A primitive value is a member of one of the following built-in type: Undefined, Null, Boolean, Number, and String;
+                | an object is a member of the remaining built-in type Object; and a function is a callable object.
+                | A function that is associated with an object via a property is a method.
+            p
+                | ECMAScript defindes a collection of built-in objects that round out the definition of ECMAScript entities.
+                | These built-in objects include the global object, the Object object, the Fcuntion object, the Array object,
+                | the String object, the Boolean object, the Number object, the Math object, the Date object, the RegExp object,
+                | the JSON object, and the Error objects Error, EvalError, RangeError, ReferenceError, SyntaxError,TypeError and URIError.
+            p
+                | ECMAScript also defines a set of built-in operator.ECMAScript operators include various unary operations,
+                | nultiplicative operators, additive operators, bitwise shift operators, relational operators, equality operators,
+                | binary birwise operators, binary logical operators, assignment operators, and the comma operator.
+            p
+                | ECMAScript syntax intentionally resembles Java syntax. ECMAScript syntax is relaxed to enable it to serve as an easy-to-use scripting language.
+                | For example, avariable is not required to have its type declared nor are types associated with properties,
+                | and defined functions are not required to have their declarations appear textually before calls to them.
+
+        .cn
+            h1 概述
+            p 这一节涵盖一个非标准的ECMAScript语言的概述
+            p
+                | ECMAScript语言是一个由一个宿主环境执行运算和对象处理的面向对象的程序设计语言，
+                | 这里规定的ECMAScript不期望自己运算，
+                | 事实上，在这个规范中没有关于外部数据的输入或者计算结果的输出的规定。
+                | 反而，他一个ECMAScript程序的不仅期望执行环境提供规范中描述的对象和工具，
+                | 还包涵超出这个规范范围的描述和行为的特定环境的宿主对象，
+                | 除了指出他们可能提供的可访问发属性和 被称为ECMAScript程序的功能。
+
+            p
+                | 脚本语言是通常操作、定制和自动化一个已存在的系统的功能的程序语言。
+                | 在这样的系统中，使用的功能已经通过用户接口的形式存在，脚本语言是一个暴露这些功能来做程序控制的机智。
+                | 在这里，已经存在就像提供一个对象和功能的宿主环境，完成脚本语言功能。
+                | 一个脚本语言期望被专业和非专业的程序员都可以使用。
+            p
+                | ECMAScript 是一个面向对象而设计的Web脚本语言，
+                | 提供了一个机制，使其在浏览器中的页面更有生机和作为一部分基于Web的客户端-服务器端架构的执行服务器运算。
+                | ECMAScript 能提供核心的脚步功能。
+            p
+                | ECMAScript的一些功能类似于其他一些程序语言的一些使用。
+                | 特别是Java、Self和Scheme中所描述的。
+            p
+                | Gosling, James, Bill Joy and Guy Steele. The Java Language Specification. Addison Wesley Publishing Co.,1996.
+                | Ungar, David, and Smith, Randall B. Self: The Power of Simplicity. OOPSLA '87 Conference Proceedings, pp.227–241, Orlando, FL, October 1987.
+                | IEEE Standard for the Scheme Programming Language. IEEE Std 1178-1990.
+            h2 Web脚本
+            p
+                | 一个web浏览器提供一个ECMAScript宿主环境为客户端计算 包括实例、
+                | 代表窗口、菜单、弹出式窗口、对话框、文本域、锚、历史记录、cookies的对象和输入输出。
+                | 而且，宿主环境提供为焦点改变、页面和图片加载和卸载、错误、中断、选择、提交和鼠标动作这样的事件附加上脚步代码。
+                | 脚本代码在HTML中显示，显示的页面是用户接口元素和固定计算的温饱和图像的组合。
+                | 脚步代码是用户交互的反应和不需要一个主程序。
+            p
+                | 一个web服务器提供为服务器端技术一个不同的包括代表请求、客户端和文件的宿主环境，锁定和分享数据的机制。
+                | 当客户端和服务器端一起使用时，基于Web的应用的自定义的用户接口很可能在客户端和服务器端分发计算。
+            p
+                | 每个支持ECMAScript的Web浏览器和服务器都提供自己的宿主环境，完成ECMAScript的执行环境。
+            h2 语言概述
+            p
+                | 下面是非正式的ECMAScript概述，并未描述语言的所有部分。 此概述并非标准的一部分。
+            p
+                | ECMAScript 是基于对象的： 基本语言和宿主功能是有对象提供，ECMAScript程序是一组可通信的对象。
+                | ECMAScript对象是属性的集合，每个属性有零个或多个特性，它确定怎么使用属性。例如，当设置可读性（Writable）为false时，
+                | 任何试图更改此属性值的ECMAScript代码都会运行失败。属性包括其他对象句柄、原始值和函数。
+                | 原始值是以下内置类型的成员：Undefined、Null、Boolean、Number和String；
+                | 对象是一个剩下的内置类型，函数是可调用的对象，通过一个属性关联在对象上的函数是方法。
+            p
+                | ECMAScript定义了一个完成ECMAScript实体定义的内建对象的集合。这些内建对象包括: 全局对象（the global object）、
+                | Object对象、Function对象、Array对象、String对象、Boolean对象、Number对象、Math对象、Date对象、RexExp对象、JSON对象、、
+                | 和Error对象： Error、EvalError、RangeError、ReferenceError、SyntaxError、TypeError、URIError。
+            p
+                | ECMAScript也定义了一组内置的运算符。ECMAScript运算符包括各种一元操作、乘法运算符、加法运算符、位溢出运算符，
+                | 关系运算符、相等运算符、二进制位运算符、二进制逻辑运算符、赋值运算符、逗号运算符。
+            p
+                | ECMAScript语法有意和Java语法相似。ECMAScript语法是松散的，使其能够作为一种易用的脚本语言。
+                | 比如一个变量不需要有类型声明，属性也不需要关联类型，定义的函数也不需要声明在调用前面。
+
+
+        .en
+            h3 Objects
+            p
+                | ECMAScript does net use classes such as those in C++, Smalltalk, or Java.
+                | Instead objects may be created in various ways including via a literal notation or via constructors which create objects
+                | and then execute code that initialises all or part of them by assigning initial values to their properties.
+                | Each constructor is a function that has a property named "prototype" that is used to implement prototype-based inheritance
+                | and shared properties. Objects are created by using constructors in new expressions;
+                | for example, new Date(2009,11) creates a new Date object. Invoking a constructor without using new has consequences that
+                | depend on the constructor. For example, Date() produces a string representation of the current date and time rather than an object.
+            p
+                | Every object created by a constructor has an implicit reference (called the object's prototype) to the value of
+                | its constructor's "prototype" property. Furthermore, a prototype may have a non-null implicit reference to its prototype, and so on;
+                | this is called the prototype chain. When a reference is made to a property in an object,
+                | that reference is to the property of that name in the first object in the prototype chain that contains a property of that name.
+                | In other words, first the object mentioned directly is examined for such a property;
+                | if that object contains the named property, that is the property to which the reference refers;
+                | if that object does not contain the named property, the prototype for that object is examined next; and so on.
+
+        .cn
+            p
+                | ECMAScript不使用诸如C++、Smalltalk、Java中的类。反而，对象可以使用各种方式创建，包括通过字面符号，
+                | 或者通过构造器创建对象，然后运行代码初始化其全部或部分属性值，为这些属性分配初始值。
+                | 每个构造器都有一个名为“prototype”的属性，被用来实现基于原型的继承和共享属性。
+                | 对象在一个new表达式中被构造器创建，例如：new Date(2009,11) 创建了一个新的日期对象（Date object）。
+                | 没有使用new调用一个有结果的构造器。例如：Date() 产生一个表示当前日期时间的字符串，而不是一个对象。
+            p
+                | 每一个通过构造器创建的对象有一个隐式引用（被称作为对象的原型）指向他的构造器的“prototype”属性。
+                | 日外，一个原型可以有一个非空的隐式引用指向这个原型，以此类推，这就是原型链。
+                | 当在一个对象上一个引用被创建到一个属性上，这个引用成为这个
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

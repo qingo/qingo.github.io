@@ -1,7 +1,7 @@
 #blog
 
 博客
-首页地址 ： http://qingo.github.io/blog
+首页地址 ： http://qingo.me
 
 ##angular框架分析系列
 

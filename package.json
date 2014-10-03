@@ -1,0 +1,15 @@
+{
+	"name": "qingo.me",
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/qingo/qingo.github.io.git"
+	},
+	"dependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-jade": "~0.4.0"
+	},
+	"devDependencies": {
+		"grunt": "^0.4.5"
+	}
+}

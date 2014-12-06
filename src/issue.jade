@@ -1,0 +1,31 @@
+//
+	Created by Qingo(site: http://www.qingo.me, email: all@qingo.me) on 2014/10/3. site: http://www.qingo.me
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		title
+	body
+		dl
+			dt Singleton模式  --用来保证某个类的实例只有一个
+			dd 那么是某个实例只有一个还是某个类产生的实例只能有一个？
+			| 在Javascript中，实例只是一个是天生的特性，
+			| 而如果某个类只能有一个实例，这个需要函数闭包来完成，
+			| 而且不一定要是类，普通函数也可以。
+			dt Proxy模式  --为了某个对象提供代理对象的模式
+			dd 假如有个占用大量资源的对象，
+			| 可能开始不去创建，等到需要的时候创建，需要委托给一个临时对象，
+			| 而在JavaScript中，采用的是异步编程，可以通过回调函数的方式来实现。
+			| 到底是不是这样的？
+			dt Iterator模式  --提供按按顺序访问集合对象中各元素的方法
+			| 即便不知道对象的内部构造，也可以按顺序访问其中的每个元素。
+			dd 虽然Javascript只有for遍历数组和for-in变量对象属性的语法，
+			| 但是在underscore.js中有按照顺序遍历的方法，
+			| 那么对于是不是对于Javascript来说，Iterator模式就已经搞定了？
+			dt Prototype模式  --明确一个实例作为要生成对象的种类原型，通过复制实例来生成新的对象。
+			dd 在Javascript语言本身设计的时候，就考虑到了原型的特点，
+			| 并且充分利用了原型，且实现了继承，所有在Javascript，原型也是与生俱来的。
+			dt Template Method模式  --在父类的一个方法中定义算法的框架，其中几个步骤的具体内容则留给子类实现
+			dd 很有用的模式，基础应该是处理好对象的继承模型吧？
+			dt Observer模式 --

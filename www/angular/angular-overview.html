@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'><title>Qingo&#x27;s blog</title><link rel='shortcut icon' href='static/img/q.ico'></head><body><nav><div><a href='test.html' title=''>test</a></div><div><a href='about.html' title=''>about</a></div></nav><h1 id="overview">overview</h1>
+<h2 id="angular-">angular框架分析之框架概述</h2>
+<p>angular是一个非常完备的框架，其表现在：</p>
+<ul>
+<li>对JavaScript语言使用的独特风格。</li>
+<li>怎么使用（只需要写什么）？</li>
+<li>机制</li>
+</ul>
+<h3 id="-javascript-">对JavaScript语言使用的独特风格。</h3>
+<p>比如：jQuery的链式调用、getter和setter共用一个函数等。
+而在angular中，又有什么样的风格呢</p>
+<ol>
+<li>angular以HTML风格的模板为基础，用JavaScript实现的指令（directive）来扩充HTML的元素（Element）、属性（Attribute）、注释节点（Comment）、类（Class）、文字节点（TextNode）的表现力，
+用scope来管理JavaScript的作用域与数据绑定，用controller来管理业务逻辑。</li>
+<li>命名空间</li>
+<li>数组和函数式等价的函数表达方式</li>
+<li>函数实参的传递</li>
+<li>函数的定义</li>
+</ol>
+<p>angular的依赖关系是改变函数的调用方式来解决依赖的，
+首先查找要执行的函数形参，根据形参的字符串值来获取相应的服务（或提供者），
+把获取到的服务(或提供者)指定为函数调用的参数，使其和形参中的参数一一对应，从而在函数内部依赖的服务（或提供者）能够保障被使用，从来解决的依赖调用，
+而把获取相应的参数并调用函数的过着称作为“依赖注入”。
+依赖注入依靠的是注入器（injector），
+注入器（injector），函数调用和函数实例化的接口，有两种不同的注入器，其一种是用来解决提供者依赖注入的，当依赖的提供者不存在时，就直接抛出异常，
+另一种注入器是用来解决服务（service）依赖注入的，当依赖的服务不存在时，就在提供者中调用其配置函数，并把生成的服务注入的依赖参数中，
+provider为用于注入某个功能的配置对象，
+模块module包含多个provider的配置函数，用过注入器（providerCache.injector）调用配置函数，返回注入器（provider）
+provider为service提供配置函数（$get），通过注入器（instanceCache.injector）调用配置函数，返回服务（service）</p>
+<p>module是不同功能配置对象的集合，
+而service是一个具体的功能块，</p>
+</body></html>

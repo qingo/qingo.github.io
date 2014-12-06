@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'><title>Qingo&#x27;s blog</title><link rel='shortcut icon' href='static/img/q.ico'></head><body><nav><div><a href='test.html' title=''>test</a></div><div><a href='about.html' title=''>about</a></div></nav><h1 id="provider">provider</h1>
+<p><code>require</code> <a href="https://github.com/angular/angular.js/blob/master/src/auto/injector.js"><code>injector.js</code></a></p>
+<h2 id="angular-">angular框架分析之提供者</h2>
+<h3 id="-">提供者的功能</h3>
+<ol>
+<li>为模块（module）的功能，提供缓存数据。
+所以的提供者（provider）都被缓存在providerCache中，而providerCache被闭包私有化在了函数内部。</li>
+<li>为服务（service）缓存配置函数（具体在其this.$get函数中）,一边注入器根据配置函数生成服务。</li>
+<li>某些提供者为模块（module）提供功能接口：
+在module的_invokeQueue、_configBlocks和_runBlocks属性中存在的所以配置相关数据，都会被相应的提供者调用。</li>
+</ol>
+<h3 id="ng-">ng模块中提供的提供者</h3>
+<h5 id="-">两个原始的提供者</h5>
+<ul>
+<li>$provider： 将其他提供者添加到提供者缓存对象中。</li>
+<li>$injector： 注入提供者，基本点函数调用</li>
+</ul>
+<pre><code>providerCache: {
+    $provider: {Object},
+    $injector: {Object}
+}
+providerCache: {
+    $provider: {Object},
+    $injector: {Object},
+    $CompileProvider: {Object},
+    $AnchorScrollProvider: {Object},
+    $BrowserProvider: {Object},
+    $CacheFactoryProvider: {Object},
+    $ControllerProvider: {Object},
+    $DocumentProvider: {Object},
+    $ExceptionHandlerProvider: {Object},
+    $FilterProvider: {Object},
+    $InterpolateProvider: {Object},
+    $IntervalProvider: {Object},
+    $HttpProvider: {Object},
+    $HttpBackendProvider: {Object},
+    $LocationProvider: {Object},
+    $LogProvider: {Object},
+    $ParseProvider: {Object},
+    $RootScopeProvider: {Object},
+    $QProvider: {Object},
+    $SceProvider: {Object},
+    $SceDelegateProvider: {Object},
+    $SnifferProvider: {Object},
+    $TemplateCacheProvider: {Object},
+    $TimeoutProvider: {Object},
+    $WindowProvider: {Object},
+    $$RAFProvider: {Object},
+    $$AsyncCallbackProvider: {Object}
+}
+</code></pre><h5 id="-">为模块提供功能的提供者</h5>
+<ul>
+<li>$compileProvider的directive方法用来添加指令（directive）。</li>
+<li>$filterProvider的register方法用来添加过滤器（filter）。</li>
+<li>$controllerProvider的register方法添加控制器（controller）。</li>
+<li>$animationProvider的register方法添加动画（animation）。<h5 id="-">其他提供者</h5>
+</li>
+</ul>
+</body></html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'><title>Qingo&#x27;s blog</title><link rel='shortcut icon' href='static/img/q.ico'></head><body><nav><div><a href='test.html' title=''>test</a></div><div><a href='about.html' title=''>about</a></div></nav><h1 id="-httpbackend">$httpBackend</h1>
+<h2 id="-">根作用域服务</h2>
+<h3 id="-">服务依赖</h3>
+<ul>
+<li>$browser</li>
+<li>$window</li>
+<li><p>$document</p>
+<h3 id="this-get-">this.$get函数</h3>
+<p>  this.$get = [&#39;$browser&#39;, &#39;$window&#39;, &#39;$document&#39;, function ($browser, $window, $document) {</p>
+<pre><code>  return createHttpBackend($browser, createXhr, $browser.defer, $window.angular.callbacks, $document[0]);
+</code></pre><p>  }];</p>
+</li>
+</ul>
+<h3 id="-">结构</h3>
+<pre><code>{{Function}}
+</code></pre><h3 id="-">问题</h3>
+<pre><code>callbacks[callbackId] = function (data) {
+    callbacks[callbackId].data = data;
+    callbacks[callbackId].called = true;
+};
+</code></pre><p>此函数未执行，那么callbacks[callbackId].called 的值为false， 这样event.type === &#39;error&#39;</p>
+</body></html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'><title></title><link rel='shortcut icon' href='static/img/q.ico'></head><body><nav></nav><dl><dt><a href='JavaScript-base/_.html'></a></dt><dd>啦啦啦啦</dd></dl><dl><dt><a href='JavaScript-base/lexer.html'></a></dt><dd>#词法分析(lexer)
+##ecma262、犀牛书第二章读后感
+编程语言的词法结构是一套基础性规律，用来描述如何使用这门语言来编写程序。作为语法的基础，它规定了诸如变量名是什么样的，怎么写注释，</dd></dl><dl><dt><a href='angular/angular-bootstrap.html'></a></dt><dd>#bootstrap
+##angular框架分析之启动程序
+angular是以HTML风格的模板为基础，其ng-app（ng:app、x-ng-app、data-ng-app）为模板入口，也是an</dd></dl><dl><dt><a href='angular/angular-directive.html'></a></dt><dd>#directive
+##angular框架分析之指令</dd></dl><dl><dt><a href='angular/angular-injector.html'></a></dt><dd>#injector
+##angular框架分析之注入器</dd></dl><dl><dt><a href='angular/angular-module.html'></a></dt><dd>#module
+&#x60;require&#x60; [&#x60;loader.js&#x60;](https://github.com/angular/angular.js/blob/master/src/loader.js)
+#</dd></dl><dl><dt><a href='angular/angular-overview.html'></a></dt><dd>#overview
+##angular框架分析之框架概述
+angular是一个非常完备的框架，其表现在：
+
+- 对JavaScript语言使用的独特风格。
+- 怎么使用（只需要写什么）？
+</dd></dl><dl><dt><a href='angular/angular-provider-$provider.html'></a></dt><dd>###$provider提供者
+
+    $provide: {
+        provider: {Function},
+        factory: {Function},
+   </dd></dl><dl><dt><a href='angular/angular-provider.html'></a></dt><dd>#provider
+&#x60;require&#x60; [&#x60;injector.js&#x60;](https://github.com/angular/angular.js/blob/master/src/auto/inje</dd></dl><dl><dt><a href='angular/jQuery2angular.html'></a></dt><dd></dd></dl><dl><dt><a href='angular/module-service.html'></a></dt><dd>#service
+##angular框架分析之服务
+module是不同功能的集合，而service是具体某个功能，
+作为函数调用的参数传入的函数内，一共使用
+</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$$asyncCallback.html'></a></dt><dd>#$$asyncCallback
+##根作用域服务
+
+###服务依赖
+- $$rAF
+- $timeout</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$$rAF.html'></a></dt><dd>#$$rAF
+##根作用域服务
+
+###服务依赖
+- $window
+- $timeout
+
+###结构
+    {f
+        @fn: %f,
+        = {f</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$$sanitizeUri.html'></a></dt><dd>#$$sanitizeUri
+##根作用域服务
+
+###服务依赖</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$SceDelegate.html'></a></dt><dd>#$SceDelegate
+##根作用域服务
+
+###服务依赖
+- $injector
+
+###this.$get函数
+
+    this.$get = = [&#x27;$injector&#x27;,</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$anchorScroll.html'></a></dt><dd>#$anchorScroll
+##根作用域服务
+
+###服务依赖
+- $window
+- $location
+- $rootScope</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$animate.html'></a></dt><dd>#$animate
+##根作用域服务
+
+###服务依赖
+- $timeout
+- $$asyncCallback</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$browser.html'></a></dt><dd>#$browser
+##根作用域服务
+
+###服务依赖
+- $window
+- $log
+- $sniffer
+- $document
+
+###this.$get函数
+    th</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$cacheFactory.html'></a></dt><dd>#$cacheFactory
+##根作用域服务
+
+###服务依赖
+- (无依赖)
+
+###结构
+
+    {{function}
+        info: {{function}}</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$compile.html'></a></dt><dd>#$compile
+##根作用域服务
+
+###服务依赖
+- $injector
+- $interpolate
+- $exceptionHandler
+- $http
+- $templa</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$controller.html'></a></dt><dd>#$controller
+##根作用域服务
+
+###服务依赖
+- $injector
+- $window
+
+###this.$get函数代码
+
+    this.$get = [&#x27;$</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$document.html'></a></dt><dd>#$document
+##根作用域服务
+
+###服务依赖
+- &#x60;$window&#x60;
+
+###get函数代码  
+
+    this.$get = [&#x27;$window&#x27;, function</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$exceptionHandler.html'></a></dt><dd>#$exceptionHandler
+##根作用域服务
+
+###服务依赖
+- $log
+
+###this.$get函数
+
+    this.$get = [&#x27;$log&#x27;, functi</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$filter.html'></a></dt><dd>#$filter
+##根作用域服务
+
+###服务依赖
+- $injector
+
+###this.$get函数
+
+     this.$get = [&#x27;$injector&#x27;, funct</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$http.html'></a></dt><dd>#$http
+##根作用域服务
+
+###服务依赖
+- $httpBackend
+- $browser
+- $cacheFactory
+- $rootScope
+- $q
+- $inj</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$httpBackend.html'></a></dt><dd>#$httpBackend
+##根作用域服务
+
+###服务依赖
+- $browser
+- $window
+- $document
+###this.$get函数
+
+    this.$</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$interpolate.html'></a></dt><dd>#$interpolate
+##根作用域服务
+
+###服务依赖
+- $parse
+- $exceptionHandler
+- $sce
+
+###结构
+    {
+        </dd></dl><dl><dt><a href='angular/angular-service/angular-service-$interval.html'></a></dt><dd>#$interval
+##根作用域服务
+
+###服务依赖
+- $rootScope
+- $window
+- $q</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$location.html'></a></dt><dd>#$location
+##根作用域服务
+
+###服务依赖
+- $rootScope
+- $browser
+- $sniffer
+- $rootElement
+
+###结构
+    </dd></dl><dl><dt><a href='angular/angular-service/angular-service-$log.html'></a></dt><dd>#$log
+##根作用域服务
+
+###服务依赖
+- $window
+
+###get函数代码
+
+    this.$get = [&#x27;$window&#x27;, function ($window</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$parse.html'></a></dt><dd>#$parse
+#####根作用域服务
+
+##服务依赖
+- $filter
+- $sniffer
+- $log
+
+##this.$get函数
+    this.$get = [&#x27;$f</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$q.html'></a></dt><dd>#$q
+##根作用域服务
+
+###服务依赖
+- $rootScope
+- $exceptionHandler
+###this.$get函数
+
+
+    this.$get = [&#x27;$</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$rootScope.html'></a></dt><dd>#$rootScope
+##根作用域服务
+
+###服务依赖
+- $injector
+- $exceptionHandler
+- $parse
+- $browser
+###this.$g</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$sce.html'></a></dt><dd>#$sce
+##根作用域服务
+
+###服务依赖
+- $parse
+- $sniffer
+- $sceDelegate
+
+###结构
+    {
+        HTML: &#x27;htm</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$sniffer.html'></a></dt><dd>#$sniffer
+##根作用域服务
+
+###服务依赖
+- $window
+- $document
+
+###this.$get函数
+
+    this.$get = [&#x27;$windo</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$templateCache.html'></a></dt><dd>#$templateCache
+##根作用域服务
+
+###服务依赖
+- $cacheFactory</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$timeout.html'></a></dt><dd>#$timeout
+##根作用域服务
+
+###服务依赖
+- $rootScope
+- $browser
+- $q
+- $exceptionHandler</dd></dl><dl><dt><a href='angular/angular-service/angular-service-$window.html'></a></dt><dd>#$window
+##根作用域服务
+
+###服务依赖
+- （无依赖）
+
+###get函数代码
+
+    this.$get = valueFn(window);
+    
+###O</dd></dl></body></html>

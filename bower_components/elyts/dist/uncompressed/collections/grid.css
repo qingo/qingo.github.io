@@ -15,12 +15,10 @@
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 0;
-  padding-right: 0;
 }
-@media (min-width: container-phone) {
+@media (min-width: 480px) {
   .container {
-    width: container-phone;
+    width: 480px;
   }
 }
 @media (min-width: 768px) {
@@ -38,18 +36,12 @@
     width: 1200px;
   }
 }
-.row {
-  margin-left: 0;
-  margin-right: 0;
-}
 .phone-1,
 .tablet-1,
 .desktop-1,
 .wide-1 {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
   float: left;
 }
 .phone-2,
@@ -58,8 +50,6 @@
 .wide-2 {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
   float: left;
 }
 .phone-3,
@@ -68,8 +58,6 @@
 .wide-3 {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
   float: left;
 }
 .phone-4,
@@ -78,8 +66,6 @@
 .wide-4 {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
   float: left;
 }
 .phone-5,
@@ -88,8 +74,6 @@
 .wide-5 {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
   float: left;
 }
 .phone-6,
@@ -98,8 +82,6 @@
 .wide-6 {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
   float: left;
 }
 .phone-7,
@@ -108,8 +90,6 @@
 .wide-7 {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
   float: left;
 }
 .phone-8,
@@ -118,8 +98,6 @@
 .wide-8 {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
   float: left;
 }
 .phone-9,
@@ -128,8 +106,6 @@
 .wide-9 {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
   float: left;
 }
 .phone-10,
@@ -138,8 +114,6 @@
 .wide-10 {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
   float: left;
 }
 .phone-11,
@@ -148,8 +122,6 @@
 .wide-11 {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
   float: left;
 }
 .phone-12,
@@ -158,11 +130,9 @@
 .wide-12 {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
   float: left;
 }
-@media (min-width: container-phone) {
+@media (min-width: 480px) {
   .phone-1 {
     width: 8.3333333333333%;
   }

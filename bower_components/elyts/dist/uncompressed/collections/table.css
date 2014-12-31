@@ -7,7 +7,7 @@ th {
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: $line-height-computed;
+  margin-bottom: 20px;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -16,7 +16,7 @@ th {
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
   padding: 8px;
-  line-height: $line-height-base;
+  line-height: 20px;
   vertical-align: top;
   border-top: 1px solid #ddd;
 }

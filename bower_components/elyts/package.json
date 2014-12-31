@@ -1,6 +1,6 @@
 {
   "name": "elyts",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "dependencies": {
     "gulp": "~3.8.10",
     "gulp-autoprefixer": "~1.0.1",

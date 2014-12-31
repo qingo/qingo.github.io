@@ -1,0 +1,37 @@
+{
+  "name": "elyts",
+  "version": "0.0.3",
+  "homepage": "https://github.com/elyts/elyts",
+  "authors": [
+    "Qingo <97383102@qq.com>"
+  ],
+  "description": "css framework ,The pursuit of best practice",
+  "main": "dist/minified/css/elyts.css",
+  "keywords": [
+    "css",
+    "framework"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "fonts",
+    ".gitignore",
+    "node_modules",
+    "Gulpfile.js",
+    "src",
+    "docs",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.3",
+    "commit": "4ba7b3bb73396c21d6a2bd0e8621781f8c1ceea2"
+  },
+  "_source": "git://github.com/elyts/elyts.git",
+  "_target": "~0.0.3",
+  "_originalSource": "elyts",
+  "_direct": true
+}

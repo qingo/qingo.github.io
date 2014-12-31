@@ -1,0 +1,13 @@
+.form-group {
+  margin-right: 15px;
+}
+.form-group label,
+.form-group input,
+.form-group select,
+.form-group textarea {
+  display: block;
+  width: 100%;
+}
+.form-inline {
+  display: inline-block;
+}

@@ -1,0 +1,96 @@
+/*******************************
+            Button
+*******************************/
+button,
+.button {
+  display: inline-block;
+  min-height: 1em;
+  border: none;
+  margin: 0 0.5rem 0 0;
+  padding: 1px 1rem;
+  border-radius: 2px;
+  outline: none;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-transition: all 0.125s;
+          transition: all 0.125s;
+  color: #fff;
+}
+button.button-block,
+.button.button-block {
+  display: block;
+  width: 100%;
+}
+button.button-inline,
+.button.button-inline {
+  display: inline-block;
+  width: auto;
+}
+button.button-large,
+.button.button-large {
+  line-height: 2.375rem;
+  height: 2.375rem;
+}
+button.button-small,
+.button.button-small {
+  line-height: 1.875rem;
+  height: 1.875rem;
+}
+button.button-default,
+.button.button-default {
+  background: #cacfd2;
+}
+button.button-default:hover,
+.button.button-default:hover {
+  background: #bdc3c7;
+}
+button.button-primary,
+.button.button-primary {
+  background: #1abc9c;
+}
+button.button-primary:hover,
+.button.button-primary:hover {
+  background: #16a085;
+}
+button.button-success,
+.button.button-success {
+  background: #2ecc71;
+}
+button.button-success:hover,
+.button.button-success:hover {
+  background: #27ae60;
+}
+button.button-info,
+.button.button-info {
+  background: #3498db;
+}
+button.button-info:hover,
+.button.button-info:hover {
+  background: #2980b9;
+}
+button.button-warning,
+.button.button-warning {
+  background: #f1c40f;
+}
+button.button-warning:hover,
+.button.button-warning:hover {
+  background: #f39c12;
+}
+button.button-danger,
+.button.button-danger {
+  background: #e74c3c;
+}
+button.button-danger:hover,
+.button.button-danger:hover {
+  background: #c0392b;
+}
+button.button-inverse,
+.button.button-inverse {
+  background: #34495e;
+}
+button.button-inverse:hover,
+.button.button-inverse:hover {
+  background: #2c3e50;
+}

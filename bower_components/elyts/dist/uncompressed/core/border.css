@@ -1,0 +1,591 @@
+/*******************************
+            Border
+*******************************/
+.border-primary-1 {
+  border: 1px solid #cacfd2;
+}
+.border-t-primary-1 {
+  border-top: 1px solid #cacfd2;
+}
+.border-b-primary-1 {
+  border-bottom: 1px solid #cacfd2;
+}
+.border-l-primary-1 {
+  border-left: 1px solid #cacfd2;
+}
+.border-r-primary-1 {
+  border-right: 1px solid #cacfd2;
+}
+.border-tb-primary-1 {
+  border-top: 1px solid #cacfd2;
+  border-bottom: 1px solid #cacfd2;
+}
+.border-lr-primary-1 {
+  border-left: 1px solid #cacfd2;
+  border-right: 1px solid #cacfd2;
+}
+.border-tlr-primary-1 {
+  border-top: 1px solid #cacfd2;
+  border-left: 1px solid #cacfd2;
+  border-right: 1px solid #cacfd2;
+}
+.border-primary-1 {
+  border: 1px solid #1abc9c;
+}
+.border-t-primary-1 {
+  border-top: 1px solid #1abc9c;
+}
+.border-b-primary-1 {
+  border-bottom: 1px solid #1abc9c;
+}
+.border-l-primary-1 {
+  border-left: 1px solid #1abc9c;
+}
+.border-r-primary-1 {
+  border-right: 1px solid #1abc9c;
+}
+.border-tb-primary-1 {
+  border-top: 1px solid #1abc9c;
+  border-bottom: 1px solid #1abc9c;
+}
+.border-lr-primary-1 {
+  border-left: 1px solid #1abc9c;
+  border-right: 1px solid #1abc9c;
+}
+.border-tlr-primary-1 {
+  border-top: 1px solid #1abc9c;
+  border-left: 1px solid #1abc9c;
+  border-right: 1px solid #1abc9c;
+}
+.border-primary-1 {
+  border: 1px solid #2ecc71;
+}
+.border-t-primary-1 {
+  border-top: 1px solid #2ecc71;
+}
+.border-b-primary-1 {
+  border-bottom: 1px solid #2ecc71;
+}
+.border-l-primary-1 {
+  border-left: 1px solid #2ecc71;
+}
+.border-r-primary-1 {
+  border-right: 1px solid #2ecc71;
+}
+.border-tb-primary-1 {
+  border-top: 1px solid #2ecc71;
+  border-bottom: 1px solid #2ecc71;
+}
+.border-lr-primary-1 {
+  border-left: 1px solid #2ecc71;
+  border-right: 1px solid #2ecc71;
+}
+.border-tlr-primary-1 {
+  border-top: 1px solid #2ecc71;
+  border-left: 1px solid #2ecc71;
+  border-right: 1px solid #2ecc71;
+}
+.border-primary-1 {
+  border: 1px solid #3498db;
+}
+.border-t-primary-1 {
+  border-top: 1px solid #3498db;
+}
+.border-b-primary-1 {
+  border-bottom: 1px solid #3498db;
+}
+.border-l-primary-1 {
+  border-left: 1px solid #3498db;
+}
+.border-r-primary-1 {
+  border-right: 1px solid #3498db;
+}
+.border-tb-primary-1 {
+  border-top: 1px solid #3498db;
+  border-bottom: 1px solid #3498db;
+}
+.border-lr-primary-1 {
+  border-left: 1px solid #3498db;
+  border-right: 1px solid #3498db;
+}
+.border-tlr-primary-1 {
+  border-top: 1px solid #3498db;
+  border-left: 1px solid #3498db;
+  border-right: 1px solid #3498db;
+}
+.border-primary-1 {
+  border: 1px solid #f1c40f;
+}
+.border-t-primary-1 {
+  border-top: 1px solid #f1c40f;
+}
+.border-b-primary-1 {
+  border-bottom: 1px solid #f1c40f;
+}
+.border-l-primary-1 {
+  border-left: 1px solid #f1c40f;
+}
+.border-r-primary-1 {
+  border-right: 1px solid #f1c40f;
+}
+.border-tb-primary-1 {
+  border-top: 1px solid #f1c40f;
+  border-bottom: 1px solid #f1c40f;
+}
+.border-lr-primary-1 {
+  border-left: 1px solid #f1c40f;
+  border-right: 1px solid #f1c40f;
+}
+.border-tlr-primary-1 {
+  border-top: 1px solid #f1c40f;
+  border-left: 1px solid #f1c40f;
+  border-right: 1px solid #f1c40f;
+}
+.border-primary-1 {
+  border: 1px solid #e74c3c;
+}
+.border-t-primary-1 {
+  border-top: 1px solid #e74c3c;
+}
+.border-b-primary-1 {
+  border-bottom: 1px solid #e74c3c;
+}
+.border-l-primary-1 {
+  border-left: 1px solid #e74c3c;
+}
+.border-r-primary-1 {
+  border-right: 1px solid #e74c3c;
+}
+.border-tb-primary-1 {
+  border-top: 1px solid #e74c3c;
+  border-bottom: 1px solid #e74c3c;
+}
+.border-lr-primary-1 {
+  border-left: 1px solid #e74c3c;
+  border-right: 1px solid #e74c3c;
+}
+.border-tlr-primary-1 {
+  border-top: 1px solid #e74c3c;
+  border-left: 1px solid #e74c3c;
+  border-right: 1px solid #e74c3c;
+}
+.border-primary-1 {
+  border: 1px solid #34495e;
+}
+.border-t-primary-1 {
+  border-top: 1px solid #34495e;
+}
+.border-b-primary-1 {
+  border-bottom: 1px solid #34495e;
+}
+.border-l-primary-1 {
+  border-left: 1px solid #34495e;
+}
+.border-r-primary-1 {
+  border-right: 1px solid #34495e;
+}
+.border-tb-primary-1 {
+  border-top: 1px solid #34495e;
+  border-bottom: 1px solid #34495e;
+}
+.border-lr-primary-1 {
+  border-left: 1px solid #34495e;
+  border-right: 1px solid #34495e;
+}
+.border-tlr-primary-1 {
+  border-top: 1px solid #34495e;
+  border-left: 1px solid #34495e;
+  border-right: 1px solid #34495e;
+}
+.border-primary-2 {
+  border: 2px solid #cacfd2;
+}
+.border-t-primary-2 {
+  border-top: 2px solid #cacfd2;
+}
+.border-b-primary-2 {
+  border-bottom: 2px solid #cacfd2;
+}
+.border-l-primary-2 {
+  border-left: 2px solid #cacfd2;
+}
+.border-r-primary-2 {
+  border-right: 2px solid #cacfd2;
+}
+.border-tb-primary-2 {
+  border-top: 2px solid #cacfd2;
+  border-bottom: 2px solid #cacfd2;
+}
+.border-lr-primary-2 {
+  border-left: 2px solid #cacfd2;
+  border-right: 2px solid #cacfd2;
+}
+.border-tlr-primary-2 {
+  border-top: 2px solid #cacfd2;
+  border-left: 2px solid #cacfd2;
+  border-right: 2px solid #cacfd2;
+}
+.border-primary-2 {
+  border: 2px solid #1abc9c;
+}
+.border-t-primary-2 {
+  border-top: 2px solid #1abc9c;
+}
+.border-b-primary-2 {
+  border-bottom: 2px solid #1abc9c;
+}
+.border-l-primary-2 {
+  border-left: 2px solid #1abc9c;
+}
+.border-r-primary-2 {
+  border-right: 2px solid #1abc9c;
+}
+.border-tb-primary-2 {
+  border-top: 2px solid #1abc9c;
+  border-bottom: 2px solid #1abc9c;
+}
+.border-lr-primary-2 {
+  border-left: 2px solid #1abc9c;
+  border-right: 2px solid #1abc9c;
+}
+.border-tlr-primary-2 {
+  border-top: 2px solid #1abc9c;
+  border-left: 2px solid #1abc9c;
+  border-right: 2px solid #1abc9c;
+}
+.border-primary-2 {
+  border: 2px solid #2ecc71;
+}
+.border-t-primary-2 {
+  border-top: 2px solid #2ecc71;
+}
+.border-b-primary-2 {
+  border-bottom: 2px solid #2ecc71;
+}
+.border-l-primary-2 {
+  border-left: 2px solid #2ecc71;
+}
+.border-r-primary-2 {
+  border-right: 2px solid #2ecc71;
+}
+.border-tb-primary-2 {
+  border-top: 2px solid #2ecc71;
+  border-bottom: 2px solid #2ecc71;
+}
+.border-lr-primary-2 {
+  border-left: 2px solid #2ecc71;
+  border-right: 2px solid #2ecc71;
+}
+.border-tlr-primary-2 {
+  border-top: 2px solid #2ecc71;
+  border-left: 2px solid #2ecc71;
+  border-right: 2px solid #2ecc71;
+}
+.border-primary-2 {
+  border: 2px solid #3498db;
+}
+.border-t-primary-2 {
+  border-top: 2px solid #3498db;
+}
+.border-b-primary-2 {
+  border-bottom: 2px solid #3498db;
+}
+.border-l-primary-2 {
+  border-left: 2px solid #3498db;
+}
+.border-r-primary-2 {
+  border-right: 2px solid #3498db;
+}
+.border-tb-primary-2 {
+  border-top: 2px solid #3498db;
+  border-bottom: 2px solid #3498db;
+}
+.border-lr-primary-2 {
+  border-left: 2px solid #3498db;
+  border-right: 2px solid #3498db;
+}
+.border-tlr-primary-2 {
+  border-top: 2px solid #3498db;
+  border-left: 2px solid #3498db;
+  border-right: 2px solid #3498db;
+}
+.border-primary-2 {
+  border: 2px solid #f1c40f;
+}
+.border-t-primary-2 {
+  border-top: 2px solid #f1c40f;
+}
+.border-b-primary-2 {
+  border-bottom: 2px solid #f1c40f;
+}
+.border-l-primary-2 {
+  border-left: 2px solid #f1c40f;
+}
+.border-r-primary-2 {
+  border-right: 2px solid #f1c40f;
+}
+.border-tb-primary-2 {
+  border-top: 2px solid #f1c40f;
+  border-bottom: 2px solid #f1c40f;
+}
+.border-lr-primary-2 {
+  border-left: 2px solid #f1c40f;
+  border-right: 2px solid #f1c40f;
+}
+.border-tlr-primary-2 {
+  border-top: 2px solid #f1c40f;
+  border-left: 2px solid #f1c40f;
+  border-right: 2px solid #f1c40f;
+}
+.border-primary-2 {
+  border: 2px solid #e74c3c;
+}
+.border-t-primary-2 {
+  border-top: 2px solid #e74c3c;
+}
+.border-b-primary-2 {
+  border-bottom: 2px solid #e74c3c;
+}
+.border-l-primary-2 {
+  border-left: 2px solid #e74c3c;
+}
+.border-r-primary-2 {
+  border-right: 2px solid #e74c3c;
+}
+.border-tb-primary-2 {
+  border-top: 2px solid #e74c3c;
+  border-bottom: 2px solid #e74c3c;
+}
+.border-lr-primary-2 {
+  border-left: 2px solid #e74c3c;
+  border-right: 2px solid #e74c3c;
+}
+.border-tlr-primary-2 {
+  border-top: 2px solid #e74c3c;
+  border-left: 2px solid #e74c3c;
+  border-right: 2px solid #e74c3c;
+}
+.border-primary-2 {
+  border: 2px solid #34495e;
+}
+.border-t-primary-2 {
+  border-top: 2px solid #34495e;
+}
+.border-b-primary-2 {
+  border-bottom: 2px solid #34495e;
+}
+.border-l-primary-2 {
+  border-left: 2px solid #34495e;
+}
+.border-r-primary-2 {
+  border-right: 2px solid #34495e;
+}
+.border-tb-primary-2 {
+  border-top: 2px solid #34495e;
+  border-bottom: 2px solid #34495e;
+}
+.border-lr-primary-2 {
+  border-left: 2px solid #34495e;
+  border-right: 2px solid #34495e;
+}
+.border-tlr-primary-2 {
+  border-top: 2px solid #34495e;
+  border-left: 2px solid #34495e;
+  border-right: 2px solid #34495e;
+}
+.border-primary-3 {
+  border: 3px solid #cacfd2;
+}
+.border-t-primary-3 {
+  border-top: 3px solid #cacfd2;
+}
+.border-b-primary-3 {
+  border-bottom: 3px solid #cacfd2;
+}
+.border-l-primary-3 {
+  border-left: 3px solid #cacfd2;
+}
+.border-r-primary-3 {
+  border-right: 3px solid #cacfd2;
+}
+.border-tb-primary-3 {
+  border-top: 3px solid #cacfd2;
+  border-bottom: 3px solid #cacfd2;
+}
+.border-lr-primary-3 {
+  border-left: 3px solid #cacfd2;
+  border-right: 3px solid #cacfd2;
+}
+.border-tlr-primary-3 {
+  border-top: 3px solid #cacfd2;
+  border-left: 3px solid #cacfd2;
+  border-right: 3px solid #cacfd2;
+}
+.border-primary-3 {
+  border: 3px solid #1abc9c;
+}
+.border-t-primary-3 {
+  border-top: 3px solid #1abc9c;
+}
+.border-b-primary-3 {
+  border-bottom: 3px solid #1abc9c;
+}
+.border-l-primary-3 {
+  border-left: 3px solid #1abc9c;
+}
+.border-r-primary-3 {
+  border-right: 3px solid #1abc9c;
+}
+.border-tb-primary-3 {
+  border-top: 3px solid #1abc9c;
+  border-bottom: 3px solid #1abc9c;
+}
+.border-lr-primary-3 {
+  border-left: 3px solid #1abc9c;
+  border-right: 3px solid #1abc9c;
+}
+.border-tlr-primary-3 {
+  border-top: 3px solid #1abc9c;
+  border-left: 3px solid #1abc9c;
+  border-right: 3px solid #1abc9c;
+}
+.border-primary-3 {
+  border: 3px solid #2ecc71;
+}
+.border-t-primary-3 {
+  border-top: 3px solid #2ecc71;
+}
+.border-b-primary-3 {
+  border-bottom: 3px solid #2ecc71;
+}
+.border-l-primary-3 {
+  border-left: 3px solid #2ecc71;
+}
+.border-r-primary-3 {
+  border-right: 3px solid #2ecc71;
+}
+.border-tb-primary-3 {
+  border-top: 3px solid #2ecc71;
+  border-bottom: 3px solid #2ecc71;
+}
+.border-lr-primary-3 {
+  border-left: 3px solid #2ecc71;
+  border-right: 3px solid #2ecc71;
+}
+.border-tlr-primary-3 {
+  border-top: 3px solid #2ecc71;
+  border-left: 3px solid #2ecc71;
+  border-right: 3px solid #2ecc71;
+}
+.border-primary-3 {
+  border: 3px solid #3498db;
+}
+.border-t-primary-3 {
+  border-top: 3px solid #3498db;
+}
+.border-b-primary-3 {
+  border-bottom: 3px solid #3498db;
+}
+.border-l-primary-3 {
+  border-left: 3px solid #3498db;
+}
+.border-r-primary-3 {
+  border-right: 3px solid #3498db;
+}
+.border-tb-primary-3 {
+  border-top: 3px solid #3498db;
+  border-bottom: 3px solid #3498db;
+}
+.border-lr-primary-3 {
+  border-left: 3px solid #3498db;
+  border-right: 3px solid #3498db;
+}
+.border-tlr-primary-3 {
+  border-top: 3px solid #3498db;
+  border-left: 3px solid #3498db;
+  border-right: 3px solid #3498db;
+}
+.border-primary-3 {
+  border: 3px solid #f1c40f;
+}
+.border-t-primary-3 {
+  border-top: 3px solid #f1c40f;
+}
+.border-b-primary-3 {
+  border-bottom: 3px solid #f1c40f;
+}
+.border-l-primary-3 {
+  border-left: 3px solid #f1c40f;
+}
+.border-r-primary-3 {
+  border-right: 3px solid #f1c40f;
+}
+.border-tb-primary-3 {
+  border-top: 3px solid #f1c40f;
+  border-bottom: 3px solid #f1c40f;
+}
+.border-lr-primary-3 {
+  border-left: 3px solid #f1c40f;
+  border-right: 3px solid #f1c40f;
+}
+.border-tlr-primary-3 {
+  border-top: 3px solid #f1c40f;
+  border-left: 3px solid #f1c40f;
+  border-right: 3px solid #f1c40f;
+}
+.border-primary-3 {
+  border: 3px solid #e74c3c;
+}
+.border-t-primary-3 {
+  border-top: 3px solid #e74c3c;
+}
+.border-b-primary-3 {
+  border-bottom: 3px solid #e74c3c;
+}
+.border-l-primary-3 {
+  border-left: 3px solid #e74c3c;
+}
+.border-r-primary-3 {
+  border-right: 3px solid #e74c3c;
+}
+.border-tb-primary-3 {
+  border-top: 3px solid #e74c3c;
+  border-bottom: 3px solid #e74c3c;
+}
+.border-lr-primary-3 {
+  border-left: 3px solid #e74c3c;
+  border-right: 3px solid #e74c3c;
+}
+.border-tlr-primary-3 {
+  border-top: 3px solid #e74c3c;
+  border-left: 3px solid #e74c3c;
+  border-right: 3px solid #e74c3c;
+}
+.border-primary-3 {
+  border: 3px solid #34495e;
+}
+.border-t-primary-3 {
+  border-top: 3px solid #34495e;
+}
+.border-b-primary-3 {
+  border-bottom: 3px solid #34495e;
+}
+.border-l-primary-3 {
+  border-left: 3px solid #34495e;
+}
+.border-r-primary-3 {
+  border-right: 3px solid #34495e;
+}
+.border-tb-primary-3 {
+  border-top: 3px solid #34495e;
+  border-bottom: 3px solid #34495e;
+}
+.border-lr-primary-3 {
+  border-left: 3px solid #34495e;
+  border-right: 3px solid #34495e;
+}
+.border-tlr-primary-3 {
+  border-top: 3px solid #34495e;
+  border-left: 3px solid #34495e;
+  border-right: 3px solid #34495e;
+}

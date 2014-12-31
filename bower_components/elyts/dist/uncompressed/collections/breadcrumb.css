@@ -1,0 +1,11 @@
+.breadcrumb {
+  line-height: 2rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.breadcrumb a,
+.breadcrumb .item {
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: rgba(255,255,255,0.7);
+}

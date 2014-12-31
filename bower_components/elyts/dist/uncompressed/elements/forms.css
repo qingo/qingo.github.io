@@ -1,0 +1,17 @@
+.form-item.form-block {
+  display: block;
+  width: 100%;
+}
+.form-item.form-inline {
+  display: inline-block;
+  width: auto;
+}
+.form-item.form-large {
+  margin: 0 20px 20px 0;
+}
+.form-item.form-normal {
+  margin: 0 10px 10px 0;
+}
+.form-item.form-small {
+  margin: 0 5px 5px 0;
+}

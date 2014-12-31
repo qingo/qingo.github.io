@@ -1,0 +1,38 @@
+.checkbox input {
+  position: absolute;
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.checkbox input + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.checkbox input + label:before {
+  position: absolute;
+  left: 0.25rem;
+  top: 1px;
+}
+.checkbox.checkbox-success input + label {
+  padding-left: 1.25rem;
+}
+.checkbox.checkbox-success input + label:before {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border: 1px solid #b8b8b8;
+  border-radius: 2px;
+  content: '';
+  -webkit-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out;
+}
+.checkbox.checkbox-success input:checked + label:before {
+  font-family: 'icons';
+  content: '\f167';
+  color: #038cd6;
+  border: 1px solid #038cd6;
+}

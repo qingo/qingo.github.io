@@ -1,0 +1,24 @@
+.img-small {
+  height: 88px;
+}
+.img-jump {
+  width: auto;
+  height: auto;
+  max-width: 490px;
+  max-height: none;
+  overflow: hidden;
+  position: absolute;
+  top: 10px;
+}
+.img-jump.img-jump-left {
+  left: 10px;
+}
+.img-jump.img-jump-right {
+  right: 10px;
+}
+.img-jump.img-jump-top {
+  top: -60px;
+}
+.img-full {
+  width: 100%;
+}

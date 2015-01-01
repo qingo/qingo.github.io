@@ -7,249 +7,70 @@
   <title>Qingo'blog|小前端真不小</title>
   <link rel="stylesheet" href="/bower_components/elyts/dist/minified/css/elyts.css"/>
 </head>
-<body><section><article><p></p><article><header><h1><a href="angular/angular-bootstrap.html">angular-bootstrap</a></h1></header><section><p><h1 id="bootstrap">bootstrap</h1>
-<h2 id="angular-">angular框架分析之启动程序</h2>
-<p>angular是以HTML风格的模板为基础，其ng-app（ng:app、x-ng-app、data-ng-app）为模板入口，也是angular程序执行的入口，
-从ng-app开始的HTML被视为angular的模板，其内部的扩展指令会根据angular不同模块中配置的指令，发挥其扩展的功能。</p>
-</p></section></article><article><header><h1><a href="angular/angular-directive.html">angular-directive</a></h1></header><section><p><h1 id="directive">directive</h1>
-<h2 id="angular-">angular框架分析之指令</h2>
-</p></section></article><article><header><h1><a href="angular/angular-injector.html">angular-injector</a></h1></header><section><p><h1 id="injector">injector</h1>
-<h2 id="angular-">angular框架分析之注入器</h2>
-</p></section></article><article><header><h1><a href="angular/angular-module.html">angular-module</a></h1></header><section><p><h1 id="module">module</h1>
-<p><code>require</code> <a href="https://github.com/angular/angular.js/blob/master/src/loader.js"><code>loader.js</code></a></p>
-<h2 id="angular-">angular框架分析之模块</h2>
-<p>功能集合
-不同的功能集合被封装在不同的模块中，可以通过模块的依赖获取所要使用的功能。</p>
-<h3 id="-">模块的作用</h3>
-<ul>
-<li>通过模块依赖关系，灵活使用各种组件。</li>
-<li>为service、animation、filter、controller、directive提供配置接口。</li>
-</ul>
-<h3 id="angular-module-">angular.module的接口</h3>
-<h5 id="-">三个参数</h5>
-<ol>
-<li><code>name</code>: <code>{String}</code>模块名，后面会直接赋值给模块实例<code>moduleInstance</code>的<code>name</code>属性上。</li>
-<li><code>requires</code>: <code>{Array}</code>依赖的模块列表，是以模块名组成的数组。</li>
-<li><code>configFn</code>: <code>{Array|Function}</code>配置函数，负责模块的配置，其中具体的配置信息会在使用时被注入。</li>
-</ol>
-<h5 id="-">调用</h5>
-<ol>
-<li>生成的模块会被缓存到<code>modules</code>中，如：<br> <code>angular.module(&#39;Qingo&#39;,[]);</code>
- 则创建的模块被缓存在<code>modules[&#39;Qingo&#39;]</code>，<code>modules</code>变量是使用闭包，私有化在函数内部的。</li>
-<li>当<code>require</code>存在时，此时为创建模块，如果<code>modules</code>中已经缓存了模块，则清楚掉，重新创建。</li>
-<li>当<code>require</code>不存在时，此时为获取模块，即从<code>modules</code>中获取出模块，以供执行操作。</li>
-</ol>
-<h3 id="-angular-module-">模块的结构（angular.module的返回值）</h3>
-<pre><code>// 我是伪代码，请不要欺负我。
-var moduleInstance = {
-    _invokeQueue: {Array},
-    _configBlocks: {Array},
-    _runBlocks: {Array},
-    requires: {Array},
-    name: {String},
-    provider: {Function},
-    factory: {Function},
-    service: {Function},
-    value: {Function},
-    constant: {Function},
-    animation: {Function},
-    filter: {Function},
-    controller: {Function},
-    directive: {Function},
-    config: {Function},
-    run: {Function}
-}
-</code></pre><h4 id="-">模块的属性</h4>
-<ol>
-<li><code>_invokeQueue</code>: <code>{Array}</code>调用队列，其中在加载依赖时被调用,其中每一项是一个长度为3的数组，每一项的格式为<br> <code>[provider, method, arguments]</code><br> 第一项<code>provider</code>代表的提供者，第二项<code>method</code>代表的提供者的方法，第三项<code>arguments</code>是提供者执行方法时的参数。</li>
-<li><code>_configBlocks</code>: <code>{Array}</code>配置块列表,当定义模块时，第三个参数<code>configFn</code>存在时，<code>config</code>方法被执行，并把相关参数添加到此属性中。具体的格式同<code>_invokeQueue</code>。</li>
-<li><code>_runBlocks</code>: <code>{Array}</code>运行块列表</li>
-<li><code>requires</code>: <code>{Array}</code>依赖模块列表</li>
-<li><code>name</code>: <code>{String}</code>模块名</li>
-</ol>
-<h4 id="-">模块的方法</h4>
-<p>模块的方法是用来操作<code>_invokeQueue</code>、<code>_configBlocks</code>、<code>_runBlocks</code>三个参数使用的，在模块加载时会根据这三个参数中的配置信息来执行不同的操作。</p>
-<ol>
-<li><code>provider</code>: 向_invokeQueue中添加一项数据，其添加的数据是一个数组<code>[&#39;$provider&#39;, &#39;provider&#39;,arguments]</code>。<br> 具体功能参考angular-provider</li>
-<li><code>factory</code>: 向_invokeQueue中添加一项数据，其添加的数据是一个数组<code>[&#39;$provider&#39;, &#39;factory&#39;,arguments]</code>。</li>
-<li><code>service</code>: 向_invokeQueue中添加一项数据，其添加的数据是一个数组<code>[&#39;$provider&#39;, &#39;service&#39;,arguments]</code>。</li>
-<li><code>value</code>: 向_invokeQueue的开始添加一项数据，其添加的数据是一个数组<code>[&#39;$provider&#39;, &#39;value&#39;,arguments]</code>。</li>
-<li><code>constant</code>: 向_invokeQueue中添加一项数据，其添加的数据是一个数组<code>[&#39;$provider&#39;, &#39;constant&#39;,arguments]</code>。</li>
-<li><code>animation</code>: 向_invokeQueue中添加一项数据，其添加的数据是一个数组<code>[&#39;$animationProvider&#39;, &#39;register&#39;,arguments]</code>。</li>
-<li><code>filter</code>: 向_invokeQueue中添加一项数据，其添加的数据是一个数组<code>[&#39;$filterProvider&#39;, &#39;register&#39;,arguments]</code>。</li>
-<li><code>controller</code>: 向_invokeQueue中添加一项数据，其添加的数据是一个数组<code>[&#39;$controllerProvider&#39;, &#39;register&#39;,arguments]</code>。</li>
-<li><code>directive</code>: 向_invokeQueue中添加一项数据，其添加的数据是一个数组<code>[&#39;$compileProvider&#39;, &#39;directive&#39;,arguments]</code>。</li>
-<li><code>config</code>: 向_configBlocks中添加一项数据，其添加的数据是一个数组<code>[&#39;$injector&#39;, &#39;invoke&#39;,arguments]</code>。</li>
-<li><code>run</code>: 向_runBlocks中添加一项数据，其添加的一个<code>block</code>。</li>
-</ol>
-<h3 id="-">源码使用参考</h3>
-<p><code>require</code> <a href="https://github.com/angular/angular.js/blob/master/src/AngularPublic.js"><code>AngularPublic.js</code></a></p>
-<pre><code>angularModule = setupModuleLoader(window);
-</code></pre><p>其中<code>setupModuleLoader</code>的返回值为<code>angular.module</code>，即<code>angularModule === angular.module</code></p>
-<pre><code>try {
-    angularModule(&#39;ngLocale&#39;);
-} catch (e) {
-    angularModule(&#39;ngLocale&#39;, []).provider (&#39;$locale&#39;, $LocaleProvider);
-}
-</code></pre><p>因为<code>ng</code>模块依赖<code>ngLocale</code>模块，所以先创建<code>ngLocale</code>模块，再创建<code>ng</code>模块。</p>
-<pre><code>angularModule(&#39;ng&#39;, [&#39;ngLocale&#39;], [&#39;$provide&#39;,
-        function ngModule($provide) {
-            // $$sanitizeUriProvider needs to be before $compileProvider as it is used by it.
-            $provide.provider({
-                $$sanitizeUri: $$SanitizeUriProvider
-            });
-            $provide.provider(&#39;$compile&#39;, $CompileProvider).
-                directive({
-                    a: htmlAnchorDirective,
-                    .
-                    .此处省略x个字
-                    .
-                    ngModelOptions: ngModelOptionsDirective
-                }).
-                directive({
-                    ngInclude: ngIncludeFillContentDirective
-                }).
-                directive(ngAttributeAliasDirectives).
-                directive(ngEventDirectives);
-            $provide.provider({
-                $anchorScroll: $AnchorScrollProvider,
-                .
-                .此处省略x个字
-                .
-                $$asyncCallback: $$AsyncCallbackProvider
-            });
-        }
-    ]);
-</code></pre><p>先获取<code>ngLocale</code>模块,如果没有获取到，会跳转到<code>catch</code>语句中创建<code>ngLocale</code>模块。在上面的代码中，<code>ngLocale</code>模块的创建没有第三个参数配置函数<code>configFn</code>，在创建了模块之后，添加了一个提供者<code>provider</code>。
-所以现在<code>ngLocale</code>模块的结构为：</p>
-<pre><code>{
-    _invokeQueue: [&#39;$provider&#39;, &#39;provide&#39;, [&#39;$locale&#39;, $LocaleProvider]],
-    _configBlocks: [],
-    _runBlocks: [],
-    requires: [],
-    name: &#39;ngLocate&#39;,
-    ...原始模块的方法（factory、factory等）
-}
-</code></pre><p>创建<code>ng</code>模块，其依赖<code>ngLocale</code>模块，有配置函数，所有限制<code>ng</code>模块的结构为：</p>
-<pre><code>{
-    _invokeQueue: [],
-    _configBlocks: [&#39;$injector&#39;, &#39;invoke&#39;, [&#39;$provide&#39;, function ngModule($provide) { ... }]],
-    _runBlocks: [],
-    requires: [&#39;$locale&#39;],
-    name: &#39;ng&#39;,
-    ...原始模块的方法（factory、factory等）
-}
-</code></pre><p>其中<code>ng</code>模块的配置函数式直接执行提供者，在配置函数内部执行添加提供者操作和添加指令操作，其实和获取<code>ng</code>模块后调用<code>provider</code>、<code>directive</code>等方法、是等价的，
-配置函数做了一个快捷配置的操作。</p>
-<h3 id="-">组件源码使用参考</h3>
-<p><code>require</code> <a href="https://github.com/angular/bower-angular-route/blob/master/angular-route.js"><code>angular-route</code></a>  </p>
-<pre><code>var ngRouteModule = angular.module(&#39;ngRoute&#39;, [&#39;ng&#39;]).
-                        provider(&#39;$route&#39;, $RouteProvider);
-</code></pre><h3 id="-module">自定义module</h3>
-<pre><code>angular.module(&#39;Qingo&#39;,[&#39;ng&#39;, &#39;ngRoute&#39;], function(){...});
-angular.module(&#39;Qingo&#39;).provider(&#39;QTestProvider&#39;,function(){...});
-</code></pre><p>创建<code>Qingo</code>模块，它依赖于<code>ng</code>、<code>ngRoute</code>，然后给<code>Qingo</code>模块上添加了一个<code>QTestProvider</code>提供者。</p>
-</p></section></article><article><header><h1><a href="angular/angular-overview.html">angular-overview</a></h1></header><section><p><h1 id="overview">overview</h1>
-<h2 id="angular-">angular框架分析之框架概述</h2>
-<p>angular是一个非常完备的框架，其表现在：</p>
-<ul>
-<li>对JavaScript语言使用的独特风格。</li>
-<li>怎么使用（只需要写什么）？</li>
-<li>机制</li>
-</ul>
-<h3 id="-javascript-">对JavaScript语言使用的独特风格。</h3>
-<p>比如：jQuery的链式调用、getter和setter共用一个函数等。
-而在angular中，又有什么样的风格呢</p>
-<ol>
-<li>angular以HTML风格的模板为基础，用JavaScript实现的指令（directive）来扩充HTML的元素（Element）、属性（Attribute）、注释节点（Comment）、类（Class）、文字节点（TextNode）的表现力，
-用scope来管理JavaScript的作用域与数据绑定，用controller来管理业务逻辑。</li>
-<li>命名空间</li>
-<li>数组和函数式等价的函数表达方式</li>
-<li>函数实参的传递</li>
-<li>函数的定义</li>
-</ol>
-<p>angular的依赖关系是改变函数的调用方式来解决依赖的，
-首先查找要执行的函数形参，根据形参的字符串值来获取相应的服务（或提供者），
-把获取到的服务(或提供者)指定为函数调用的参数，使其和形参中的参数一一对应，从而在函数内部依赖的服务（或提供者）能够保障被使用，从来解决的依赖调用，
-而把获取相应的参数并调用函数的过着称作为“依赖注入”。
-依赖注入依靠的是注入器（injector），
-注入器（injector），函数调用和函数实例化的接口，有两种不同的注入器，其一种是用来解决提供者依赖注入的，当依赖的提供者不存在时，就直接抛出异常，
-另一种注入器是用来解决服务（service）依赖注入的，当依赖的服务不存在时，就在提供者中调用其配置函数，并把生成的服务注入的依赖参数中，
-provider为用于注入某个功能的配置对象，
-模块module包含多个provider的配置函数，用过注入器（providerCache.injector）调用配置函数，返回注入器（provider）
-provider为service提供配置函数（$get），通过注入器（instanceCache.injector）调用配置函数，返回服务（service）</p>
-<p>module是不同功能配置对象的集合，
-而service是一个具体的功能块，</p>
-</p></section></article><article><header><h1><a href="angular/angular-provider-$provider.html">angular-provider-$provider</a></h1></header><section><p><h3 id="-provider-">$provider提供者</h3>
-<pre><code>$provide: {
-    provider: {Function},
-    factory: {Function},
-    service: {Function},
-    value: {Function},
-    constant: {Function},
-    decorator: {Function}
-}
-</code></pre></p></section></article><article><header><h1><a href="angular/angular-provider.html">angular-provider</a></h1></header><section><p><h1 id="provider">provider</h1>
-<p><code>require</code> <a href="https://github.com/angular/angular.js/blob/master/src/auto/injector.js"><code>injector.js</code></a></p>
-<h2 id="angular-">angular框架分析之提供者</h2>
-<h3 id="-">提供者的功能</h3>
-<ol>
-<li>为模块（module）的功能，提供缓存数据。
-所以的提供者（provider）都被缓存在providerCache中，而providerCache被闭包私有化在了函数内部。</li>
-<li>为服务（service）缓存配置函数（具体在其this.$get函数中）,一边注入器根据配置函数生成服务。</li>
-<li>某些提供者为模块（module）提供功能接口：
-在module的_invokeQueue、_configBlocks和_runBlocks属性中存在的所以配置相关数据，都会被相应的提供者调用。</li>
-</ol>
-<h3 id="ng-">ng模块中提供的提供者</h3>
-<h5 id="-">两个原始的提供者</h5>
-<ul>
-<li>$provider： 将其他提供者添加到提供者缓存对象中。</li>
-<li>$injector： 注入提供者，基本点函数调用</li>
-</ul>
-<pre><code>providerCache: {
-    $provider: {Object},
-    $injector: {Object}
-}
-providerCache: {
-    $provider: {Object},
-    $injector: {Object},
-    $CompileProvider: {Object},
-    $AnchorScrollProvider: {Object},
-    $BrowserProvider: {Object},
-    $CacheFactoryProvider: {Object},
-    $ControllerProvider: {Object},
-    $DocumentProvider: {Object},
-    $ExceptionHandlerProvider: {Object},
-    $FilterProvider: {Object},
-    $InterpolateProvider: {Object},
-    $IntervalProvider: {Object},
-    $HttpProvider: {Object},
-    $HttpBackendProvider: {Object},
-    $LocationProvider: {Object},
-    $LogProvider: {Object},
-    $ParseProvider: {Object},
-    $RootScopeProvider: {Object},
-    $QProvider: {Object},
-    $SceProvider: {Object},
-    $SceDelegateProvider: {Object},
-    $SnifferProvider: {Object},
-    $TemplateCacheProvider: {Object},
-    $TimeoutProvider: {Object},
-    $WindowProvider: {Object},
-    $$RAFProvider: {Object},
-    $$AsyncCallbackProvider: {Object}
-}
-</code></pre><h5 id="-">为模块提供功能的提供者</h5>
-<ul>
-<li>$compileProvider的directive方法用来添加指令（directive）。</li>
-<li>$filterProvider的register方法用来添加过滤器（filter）。</li>
-<li>$controllerProvider的register方法添加控制器（controller）。</li>
-<li>$animationProvider的register方法添加动画（animation）。<h5 id="-">其他提供者</h5>
-</li>
-</ul>
-</p></section></article><article><header><h1><a href="angular/jQuery2angular.html">jQuery2angular</a></h1></header><section><p></p></section></article><article><header><h1><a href="angular/module-service.html">module-service</a></h1></header><section><p><h1 id="service">service</h1>
-<h2 id="angular-">angular框架分析之服务</h2>
-<p>module是不同功能的集合，而service是具体某个功能，
-作为函数调用的参数传入的函数内，一共使用</p>
-</p></section></article><article><header><h1><a href="angular/angular-service.html">angular-service</a></h1></header><section><p></p></section></article></article></section>    </body>
+<body>
+<section>
+  <article><p></p>
+    <article>
+      <header><h1><a href="angular/angular-bootstrap.html">angular-bootstrap</a></h1></header>
+      <section><p>bootstrap
+        angular框架分析之启动程序
+        angular是以HTML风格的模板为基础，其</p></section>
+    </article>
+    <article>
+      <header><h1><a href="angular/angular-directive.html">angular-directive</a></h1></header>
+      <section><p>directive
+        angular框架分析之指令
+      </p></section>
+    </article>
+    <article>
+      <header><h1><a href="angular/angular-injector.html">angular-injector</a></h1></header>
+      <section><p>injector
+        angular框架分析之注入器
+      </p></section>
+    </article>
+    <article>
+      <header><h1><a href="angular/angular-module.html">angular-module</a></h1></header>
+      <section><p>module
+        require loader.js
+        angular框架分析之模块
+        功能集合
+        不同的功能</p></section>
+    </article>
+    <article>
+      <header><h1><a href="angular/angular-overview.html">angular-overview</a></h1></header>
+      <section><p>overview
+        angular框架分析之框架概述
+        angular是一个非常完备的框架，其表现在：
+      </p></section>
+    </article>
+    <article>
+      <header><h1><a href="angular/angular-provider-$provider.html">angular-provider-$provider</a></h1></header>
+      <section><p>$provider提供者
+        $provide: {
+        provider: {Function},</p></section>
+    </article>
+    <article>
+      <header><h1><a href="angular/angular-provider.html">angular-provider</a></h1></header>
+      <section><p>provider
+        require injector.js
+        angular框架分析之提供者
+        提供者的功</p></section>
+    </article>
+    <article>
+      <header><h1><a href="angular/jQuery2angular.html">jQuery2angular</a></h1></header>
+      <section><p></p></section>
+    </article>
+    <article>
+      <header><h1><a href="angular/module-service.html">module-service</a></h1></header>
+      <section><p>service
+        angular框架分析之服务
+        module是不同功能的集合，而service是具体某</p></section>
+    </article>
+    <article>
+      <header><h1><a href="angular/angular-service.html">angular-service</a></h1></header>
+      <section><p></p></section>
+    </article>
+  </article>
+</section>
+</body>
 </html>

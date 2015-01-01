@@ -7,704 +7,184 @@
   <title>Qingo'blog|小前端真不小</title>
   <link rel="stylesheet" href="/bower_components/elyts/dist/minified/css/elyts.css"/>
 </head>
-<body><section><article><p></p><article><header><h1><a href="angular-service/angular-service-$$asyncCallback.html">angular-service-$$asyncCallback</a></h1></header><section><p><h1 id="-asynccallback">$$asyncCallback</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$$rAF</li>
-<li>$timeout</li>
-</ul>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$$rAF.html">angular-service-$$rAF</a></h1></header><section><p><h1 id="-raf">$$rAF</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$window</li>
-<li>$timeout</li>
-</ul>
-<h3 id="-">结构</h3>
-<pre><code>{f
-    @fn: %f,
-    = {f
+<body><section><article><p></p><article><header><h1><a href="angular-service/angular-service-$$asyncCallback.html">angular-service-$$asyncCallback</a></h1></header><section><p>$$asyncCallback
+根作用域服务
+服务依赖
 
-    }
-}
-</code></pre><h3 id="-">问题</h3>
-<p>requestAnimationFrame是什么函数及其怎么用？</p>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$$sanitizeUri.html">angular-service-$$sanitizeUri</a></h1></header><section><p><h1 id="-sanitizeuri">$$sanitizeUri</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$SceDelegate.html">angular-service-$SceDelegate</a></h1></header><section><p><h1 id="-scedelegate">$SceDelegate</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$injector</li>
-</ul>
-<h3 id="this-get-">this.$get函数</h3>
-<pre><code>this.$get = = [&#39;$injector&#39;, function ($injector) {
-    return { 
-        trustAs: trustAs,
-        getTrusted: getTrusted,
-        valueOf: valueOf
-    }
-}
-</code></pre><h3 id="-">问题</h3>
-<p>$secDelegate的作用</p>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$anchorScroll.html">angular-service-$anchorScroll</a></h1></header><section><p><h1 id="-anchorscroll">$anchorScroll</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$window</li>
-<li>$location</li>
-<li>$rootScope</li>
-</ul>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$animate.html">angular-service-$animate</a></h1></header><section><p><h1 id="-animate">$animate</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$timeout</li>
-<li>$$asyncCallback</li>
-</ul>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$browser.html">angular-service-$browser</a></h1></header><section><p><h1 id="-browser">$browser</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$window</li>
-<li>$log</li>
-<li>$sniffer</li>
-<li>$document</li>
-</ul>
-<h3 id="this-get-">this.$get函数</h3>
-<pre><code>this.$get = [&#39;$window&#39;, &#39;$log&#39;, &#39;$sniffer&#39;, &#39;$document&#39;,
-    function ($window, $log, $sniffer, $document) {
-        return new Browser($window, $document, $log, $sniffer);
-    }
-];
-</code></pre><h3 id="service-">service结构</h3>
-<pre><code>{
-    isMock: {{Boolean}},
-    $$completeOutstandingRequest: {{Function}},
-    $$incOutstandingRequestCount: {{Function}},
-    notifyWhenNoOutstandingRequests: {{Function}},
-    addPollFn: {{Function}},
-    url: {{Function}},
-    onUrlChange: {{Function}},
-    baseHref: {{Function}},
-    cookies: {{Function}},
-    defer: {{Function}},
-}
-</code></pre><h3 id="-">问题</h3>
-<p>isMock代表的什么？（参考ngMock模块）</p>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$cacheFactory.html">angular-service-$cacheFactory</a></h1></header><section><p><h1 id="-cachefactory">$cacheFactory</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>(无依赖)</li>
-</ul>
-<h3 id="-">结构</h3>
-<pre><code>{{function}
-    info: {{function}},
-    get: {{function}}
-}
+$$rAF
+$timeout
 
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$$rAF.html">angular-service-$$rAF</a></h1></header><section><p>$$rAF
+根作用域服务
+服务依赖
 
+$window
+$timeout
 
+结构
 {f
-    @name: %f,
-    @type: %f,
-    ^state: %b,
-    ^data: %n,
-    ^capacity: %n,
-    ^lruHash: %a,
-    ^freshEnd: %a,
-    ^stale: %a,
-    - {
+    @fn</p></section></article><article><header><h1><a href="angular-service/angular-service-$$sanitizeUri.html">angular-service-$$sanitizeUri</a></h1></header><section><p>$$sanitizeUri
+根作用域服务
+服务依赖
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$SceDelegate.html">angular-service-$SceDelegate</a></h1></header><section><p>$SceDelegate
+根作用域服务
+服务依赖
 
-    },
-    = {
-        put: %f,
-        get: %f,
-        remove: %f,
-        removeAll: %f,
-        destroy: %f,
-        info: %f
-    },
-    info: %f,
-    get: %f
-}
-</code></pre></p></section></article><article><header><h1><a href="angular-service/angular-service-$compile.html">angular-service-$compile</a></h1></header><section><p><h1 id="-compile">$compile</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$injector</li>
-<li>$interpolate</li>
-<li>$exceptionHandler</li>
-<li>$http</li>
-<li>$templateCache</li>
-<li>$controller</li>
-<li>$rootScope</li>
-<li>$document</li>
-<li>$sce</li>
-<li>$animate</li>
-<li>$$sanitizeUri</li>
-</ul>
-<h3 id="-">结构</h3>
-<pre><code>this.$get:-&gt;
-    @: $injector,$interpolate,$exceptionHandler,$http,$templateCache,$parse,$controller,$rootScope,$document,$sce,$animate,$$sanitizeUri
-    ^:
-        :compile-&gt;
-            @: $compileNodes, transcludeFn, maxPriority, ignoreDirective, previousCompileContext
-        :safeAddClass-&gt;
-            @: $element, className
-        :compileNodes-&gt;
-            @: nodeList, transcludeFn, $rootElement, maxPriority, ignoreDirective, previousCompileContext 
-        :createBoundTranscludeFn-&gt;
-            @: scope, transcludeFn
-        :collectDirectives-&gt;
-            @: node, directives, attrs, maxPriority, ignoreDirective
-        :groupScan-&gt;
-            @: node, attrStart, attrEnd
-        :groupElementLinkFnWrapper-&gt;
-            @: dst, src
-        :compileTemplateUrl-&gt;
-            @: directives, $compileNode, tAttrs, $rootElement, preLinkFns, postLinkFns, previousCompileContext
-        :byPriority-&gt;
-            @: a, b
-        :assertNoDuplicate-&gt;
-            @: what, previousDirective, directive, element
-        :addTextInterpolateDirective
-            @: directive, text
-        :getTrustedContext-&gt;
-            @: node, attrNormalizedName
-        :addAttrInterpolateDirective-&gt;
-            @: node, directives, value, name
-        :replaceWith-&gt;
-            @: $rootElement, elementsToRemove, newNode
-        :cloneAndAnnotateFn-&gt;
-            @: fn, annotation
-    -:
+$injector
 
-    &gt;: ^compile
-</code></pre><h3 id="-">注意点</h3>
-<ol>
-<li>理解方面，为提供方法而存在的方法，指令怎么在DOM中表现出行为，需要作用于node、scope、controller、
-其需要一个方法来完成，这个方法就是$compile service的返回值，所有$compile这个service为为了提供方法而存在的方法
-是指令在DOM中表现出来的方法为$compile的返回值publicLinkFn，
-publicLinkFn 在执行时调用$compile阶段产生的compositeLinkFn函数，</li>
-<li>compile函数的返回值为 函数名为publicLinkFn的函数，此函数在bootstrap中被调用，其调用方式为 <code>compile（scope）</code>
-这里只用有一个实参，但是compile作为$compile service暴露出来的函数，可以被手动点用，在调用时，
-第二个参数为cloneConnectFn，此函数使用时，$compileNodes被clone，被被cloneConnectFn函数所调用，
-第三个参数为transcludeControllers，次参数为一个数组，它使用时，分别为$compileNodes赋予一个Controller</li>
-<li>关于compositeLinkFn的调用，此时其中含有多层递归，其具体递归的深度和node的结构有关
-每次层中，可能有好几个node，要看这个node有没有兄弟节点，
-对于一个node来说，最多可能有两个函数，分别是nodeLinkFn和childLinkFn，nodeLinkFn为执行当前node的函数，childLinkFn为执行下一代node的函数
-nodeLinkFn为applyDirectivesToNode的返回值，childLinkFn函数为递归调用的compileNodes的返回值。
-当nodeLinkFn存在时，执行nodeLinkFn，其中该函数的第一个参数为childLinkFn，这样吧子代node的执行放在nodeLinkFn内部</li>
-<li>compositeLinkFn的调用，有四个参数，其中publicLinkFn函数中的的调用方式是
-<code>compositeLinkFn(scope,$linkNode,$linkNode)</code></li>
-</ol>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$controller.html">angular-service-$controller</a></h1></header><section><p><h1 id="-controller">$controller</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$injector</li>
-<li>$window</li>
-</ul>
-<h3 id="this-get-">this.$get函数代码</h3>
-<pre><code>this.$get = [&#39;$injector&#39;, &#39;$window&#39;, function ($injector, $window) {
-    return {{Function}}
-}];
-</code></pre><h2 id="-">#</h2>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$document.html">angular-service-$document</a></h1></header><section><p><h1 id="-document">$document</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li><code>$window</code></li>
-</ul>
-<h3 id="get-">get函数代码</h3>
-<pre><code>this.$get = [&#39;$window&#39;, function (window) {
-        return jqLite(window.document);
-    }];
-</code></pre><h3 id="service-">service结构</h3>
-<pre><code>{
-    __proto__: { // 此处表示原型链上的属性和方法
+this.$get函数
+t</p></section></article><article><header><h1><a href="angular-service/angular-service-$anchorScroll.html">angular-service-$anchorScroll</a></h1></header><section><p>$anchorScroll
+根作用域服务
+服务依赖
 
-    }
-}
-</code></pre></p></section></article><article><header><h1><a href="angular-service/angular-service-$exceptionHandler.html">angular-service-$exceptionHandler</a></h1></header><section><p><h1 id="-exceptionhandler">$exceptionHandler</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$log</li>
-</ul>
-<h3 id="this-get-">this.$get函数</h3>
-<pre><code>this.$get = [&#39;$log&#39;, function ($log) {
-    return function (exception, cause) {
-        $log.error.apply($log, arguments);
-    };
-}];
-</code></pre><h3 id="-">问题</h3>
-<p>参数个数，同$log中的问题</p>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$filter.html">angular-service-$filter</a></h1></header><section><p><h1 id="-filter">$filter</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$injector</li>
-</ul>
-<h3 id="this-get-">this.$get函数</h3>
-<pre><code> this.$get = [&#39;$injector&#39;, function ($injector) {
-    return function (name) {
-        return $injector.get(name + &#39;Filter&#39;);
-    };
- }];
-</code></pre><h3 id="-">问题</h3>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$http.html">angular-service-$http</a></h1></header><section><p><h1 id="-http">$http</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$httpBackend</li>
-<li>$browser</li>
-<li>$cacheFactory</li>
-<li>$rootScope</li>
-<li>$q</li>
-<li>$injector</li>
-</ul>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$httpBackend.html">angular-service-$httpBackend</a></h1></header><section><p><h1 id="-httpbackend">$httpBackend</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$browser</li>
-<li>$window</li>
-<li><p>$document</p>
-<h3 id="this-get-">this.$get函数</h3>
-<p>  this.$get = [&#39;$browser&#39;, &#39;$window&#39;, &#39;$document&#39;, function ($browser, $window, $document) {</p>
-<pre><code>  return createHttpBackend($browser, createXhr, $browser.defer, $window.angular.callbacks, $document[0]);
-</code></pre><p>  }];</p>
-</li>
-</ul>
-<h3 id="-">结构</h3>
-<pre><code>{{Function}}
-</code></pre><h3 id="-">问题</h3>
-<pre><code>callbacks[callbackId] = function (data) {
-    callbacks[callbackId].data = data;
-    callbacks[callbackId].called = true;
-};
-</code></pre><p>此函数未执行，那么callbacks[callbackId].called 的值为false， 这样event.type === &#39;error&#39;</p>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$interpolate.html">angular-service-$interpolate</a></h1></header><section><p><h1 id="-interpolate">$interpolate</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$parse</li>
-<li>$exceptionHandler</li>
-<li>$sce</li>
-</ul>
-<h3 id="-">结构</h3>
-<pre><code>{
+$window
+$location
+$root</p></section></article><article><header><h1><a href="angular-service/angular-service-$animate.html">angular-service-$animate</a></h1></header><section><p>$animate
+根作用域服务
+服务依赖
 
-}
-</code></pre></p></section></article><article><header><h1><a href="angular-service/angular-service-$interval.html">angular-service-$interval</a></h1></header><section><p><h1 id="-interval">$interval</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$rootScope</li>
-<li>$window</li>
-<li>$q</li>
-</ul>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$location.html">angular-service-$location</a></h1></header><section><p><h1 id="-location">$location</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$rootScope</li>
-<li>$browser</li>
-<li>$sniffer</li>
-<li>$rootElement</li>
-</ul>
-<h3 id="-">结构</h3>
-<pre><code>{
-    $$html5: {{boolean}},
-    $$url: {{string}},
-    $$absUrl: {{string}},
-    $$search: {{string}},
-    $$hash: {{string}},
-    $$path: {{string}},
-    $$parse: {{Function}},
-    $$compose: {{Function}},
-    $$rewrite: {{Function}},
-    __proto__: {
-        $$html5: {{boolean}},
-        $$replace: {{boolean}},
-        absUrl: {{Function}},
-        url: {{Function}},
-        protocol: {{Function}},
-        host: {{Function}},
-        port: {{Function}},
-        path: {{Function}},
-        search: {{Function}},
-        hash: {{Function}},
-        replace: {{Function}}
-}
-</code></pre></p></section></article><article><header><h1><a href="angular-service/angular-service-$log.html">angular-service-$log</a></h1></header><section><p><h1 id="-log">$log</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$window</li>
-</ul>
-<h3 id="get-">get函数代码</h3>
-<pre><code>this.$get = [&#39;$window&#39;, function ($window) {
-        return {
-            log: {{function}},
+$timeout
+$$asyncCallback
 
-            info: {{function}},
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$browser.html">angular-service-$browser</a></h1></header><section><p>$browser
+根作用域服务
+服务依赖
 
-            warn: {{function}},
+$window
+$log
+$sniffer
+$docum</p></section></article><article><header><h1><a href="angular-service/angular-service-$cacheFactory.html">angular-service-$cacheFactory</a></h1></header><section><p>$cacheFactory
+根作用域服务
+服务依赖
 
-            error: {{function}},
+(无依赖)
 
-            debug: {{function}}
-        };
-    }];
-</code></pre></p></section></article><article><header><h1><a href="angular-service/angular-service-$parse.html">angular-service-$parse</a></h1></header><section><p><h1 id="-parse">$parse</h1>
-<h5 id="-">根作用域服务</h5>
-<h2 id="-">服务依赖</h2>
-<ul>
-<li>$filter</li>
-<li>$sniffer</li>
-<li>$log</li>
-</ul>
-<h2 id="this-get-">this.$get函数</h2>
-<pre><code>this.$get = [&#39;$filter&#39;, &#39;$sniffer&#39;, &#39;$log&#39;, function ($filter, $sniffer, $log) {
-    return {{Function}}  
-}
-</code></pre><h2 id="-">代码</h2>
-<p>分两个部分Lexer(词法解析器)和Parser(语法解析器)</p>
-<h3 id="lexer-">Lexer属性</h3>
-<ol>
-<li>options  选项</li>
-<li>ch       当前的字符</li>
-<li>lastCh   下一个字符</li>
-<li>text     当前字符串</li>
-<li>index    当前序列数</li>
-<li>tokens   标识（暂时叫标识，也找不到更好的翻译，最小的语法单元）序列</li>
-</ol>
-<h3 id="lexer-">Lexer方法</h3>
-<ol>
-<li>lex          解析text字符串为标识序列</li>
-<li>is           参数为chars，判断ch是不是该字符</li>
-<li>was          参数为chars，判断lastCh是不是该字符</li>
-<li>peek         参数为i，默认值为1，获取index向后的第i个字符</li>
-<li>isNumber     判断是否为数字</li>
-<li>isWhitespace 判断是否为空格</li>
-<li>isIdent      判断是否为标识符</li>
-<li>isExpOperator判断是否为表达式符号</li>
-<li>throwError   抛出异常</li>
-<li>readNumber  读取数字</li>
-<li>readIdent   读取标识符</li>
-<li>readString  读取字符串</li>
-</ol>
-<h4 id="this-lex-">this.lex方法详解</h4>
-<p>此方法用来把text属性解析成javascript语法的表达式序列
-并把每一个序列<code>token</code>放入到tokens属性中，
-在此方法中，从text的第一位字符开始向后遍历，在循环中解析不同的类型
-lexer并不支持所有的javascript合法字符，它现在支持的有六种  </p>
-<ol>
-<li>字符串</li>
-<li>数字</li>
-<li>标识符</li>
-<li>(){}[].,;:?这几种符号</li>
-<li>空格</li>
-<li>操作符（null、true、false、undefined、+、-、/、%、^、=、===、!==、==、!=、&lt;、&gt;、&amp;&amp;、||、&amp;、|、!）
-直到text被便利结束，返回tokens属性。<h5 id="this-readnumber-">this.readNumber方法详解</h5>
-此方法用于读取数字
-无参数
-//todo 不同的number的不同分类<h6 id="-token-">返回的<code>token</code>的结构</h6>
- {<pre><code> index: start
- text: number
- literal: true
- constant: true
- fn: function(){
-     return number
- }
-</code></pre> }</li>
-</ol>
-<h5 id="this-readstring-">this.readString方法详解</h5>
-<p>此方法用于读取字符串，
-参数为quote，其中可能为 <code>&#39;</code>或者<code>&quot;</code>，字符串的开始标识
-从<code>&#39;</code>或者<code>&quot;</code>开始遍历text在遍历中有四种情况处理  </p>
-<ol>
-<li>escape string，如果是则又分两种情况:
-以u开始的escape string 和特殊的escape string(<code>\n</code>、 <code>\f</code>、 <code>\r</code>、 <code>\t</code>、 <code>\v</code>、 <code>&#39;</code>、 <code>&quot;</code>)</li>
-<li><code>\</code>字符 说明下面是escape string</li>
-<li>quote，字符串的结束，把获取到的字符串push到tokens序列中</li>
-<li>其他字符，均可为字符串<h6 id="-token-">返回的<code>token</code>的结构</h6>
- {<pre><code> index: start
- text:  rawString
- string: string
- literal: true
- constant: true
- fn: function(){
-     return string
- }
-</code></pre> }<h5 id="this-readident-">this.readIdent方法详解</h5>
-</li>
-</ol>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$q.html">angular-service-$q</a></h1></header><section><p><h1 id="-q">$q</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$rootScope</li>
-<li>$exceptionHandler<h3 id="this-get-">this.$get函数</h3>
-</li>
-</ul>
-<pre><code>this.$get = [&#39;$rootScope&#39;, &#39;$exceptionHandler&#39;, function ($rootScope, $exceptionHandler) {
-    return qFactory(function (callback) {
-        $rootScope.$evalAsync(callback);
-    }, $exceptionHandler);
-}];
-</code></pre><h3 id="-">结构</h3>
-<pre><code>{
-    defer: {{
-       function(){
-            return {
-                resolve: {{Function}},
-                reject: {{Function}},
-                notify: {{Function}},
-                promise: 
-                     {
-                        then: {{Function}},
-                        catch: {{Function}},
-                        finally: {{Function}}
-                    },
-            }
+结构
+{{function}
+ </p></section></article><article><header><h1><a href="angular-service/angular-service-$compile.html">angular-service-$compile</a></h1></header><section><p>$compile
+根作用域服务
+服务依赖
 
-        }
-    }},
-    reject: {{Function}},
-    when: {{Function}},
-    all: {{Function}}
+$injector
+$interpolate
+$exce</p></section></article><article><header><h1><a href="angular-service/angular-service-$controller.html">angular-service-$controller</a></h1></header><section><p>$controller
+根作用域服务
+服务依赖
 
-}
-</code></pre></p></section></article><article><header><h1><a href="angular-service/angular-service-$rootScope.html">angular-service-$rootScope</a></h1></header><section><p><h1 id="-rootscope">$rootScope</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$injector</li>
-<li>$exceptionHandler</li>
-<li>$parse</li>
-<li>$browser<h3 id="this-get-">this.$get函数</h3>
-</li>
-</ul>
-<pre><code>this.$get = [&#39;$injector&#39;, &#39;$exceptionHandler&#39;, &#39;$parse&#39;, &#39;$browser&#39;,
-    function ($injector, $exceptionHandler, $parse, $browser) {
-        return new function Scope() {
-                                   this.$id = nextUid();
-                                   this.$$phase = this.$parent = this.$$watchers =
-                                       this.$$nextSibling = this.$$prevSibling =
-                                           this.$$childHead = this.$$childTail = null;
-                                   this[&#39;this&#39;] = this.$root = this;
-                                   this.$$destroyed = false;
-                                   this.$$asyncQueue = [];
-                                   this.$$postDigestQueue = [];
-                                   this.$$listeners = {};
-                                   this.$$listenerCount = {};
-                                   this.$$isolateBindings = {};
-                               }
-}]
-</code></pre><h3 id="-">结构</h3>
-<pre><code>{
-    $id: {{number}},
-    $$phase: {{null|}},
-    $parent: {{null|Scope}},
-    $$watchers: 
-        [
-            {
-                fn: {{Function}},
-                last: {{Function}},
-                get: {{Function}},
-                exp: {{Exp}},
-                eq: {{boolean}}
-            }
-        ],
-    $$nextSibling: {{null|Scope}},
-    $$prevSibling: {{null|Scope}},
-    $$childHead: {{null|Scope}},
-    $$childTail: {{null|Scope}},
-    $root: {{null|Scope}},
-    &#39;this&#39;: {{Scope}},
-    $$destroyed: {{boolean}},
-    $$asyncQueue: {{Array}},
-    $$postDigestQueue: {{Array}},
-    $$listeners: {{Object}},
-    $$listenerCount: {{Object}},
-    $$isolateBindings: {{Object}},
-    __proto__:{
-        constructor: Scope,
-        $new: {{Function}},
-        $watch: {{Function}},
-        $watchGroup: {{Function}},
-        $watchCollection: {{Function}},
-        $digest: {{Function}},
-        $destroy: {{Function}},
-        $eval: {{Function}},
-        $evalAsync: {{Function}},
-        $$postDigest: {{Function}},
-        $apply: {{Function}},
-        $on: {{Function}},
-        $emit: {{Function}},
-        $broadcast: {{Function}}
-    }
-}
-</code></pre><h3 id="scope-">Scope对象的属性</h3>
-<ol>
-<li>$id 
- 由统一的id生成器 nextUid自动生成，用于标识每个不同的Scope实例</li>
-<li>$$phase
- 标识该scope正在进行的操作</li>
-<li>$root
- 根Scope实例</li>
-<li>this
- Scope实例本身。</li>
-<li>$parent<br> 用来描述Scope实例间的关系，指向父Scope实例，即：产生此Scope实例的Scope实例，一般使用$new方法来产生</li>
-<li>$$nextSibling
- 用来描述Scope实例间兄弟的关系，指向Scope实例的上一个兄弟Scope实例。</li>
-<li>$$prevSibling
- 用来描述Scope实例间兄弟的关系，指向Scope实例的下一个兄弟Scope实例。</li>
-<li>$$childHead
- 用来描述Scope实例间子Scope实例的关系，指向Scope实例的下一个子Scope实例中的第一个，主要用来维护子Scope实例的兄弟关系。</li>
-<li>$$childTail
- 用来描述Scope实例间子Scope实例的关系，指向Scope实例的下一个子Scope实例中的最后一个，主要用来维护子Scope实例的兄弟关系。</li>
-<li>$$$watchers
-观察者属性</li>
-</ol>
-<ol>
-<li>$$destroyed</li>
-<li>$$asyncQueue</li>
-<li>$$postDigestQueue</li>
-<li>$$listeners
-监听者属性</li>
-<li>$$listenerCount</li>
-<li>$$isolateBindings<h3 id="scope-">Scope对象的方法</h3>
-</li>
-<li>$new
- 用于创建新的Scope实例，其中可以传递一个可选的参数<code>isolate</code>,
- 创建过程可以分为两步；<br> 第一步：创建新的Scope实例，其中<ol>
-<li>当<code>isolate</code>为存在时，生成一个没有继承关系的全新的Scope实例，</li>
-<li>当<code>isolate</code>不存在时，先产生一个创建子作用域实例的构造方法<code>$$childScopeClass</code>，用于创建新的继承自当前Scope实例的Scope实例，新的Scope实例的<code>$$childScopeClass</code>方法会被覆盖为<code>null</code><br>第二步：维护Scope实例的关系
-不管<code>isolate</code>为<code>true</code>或<code>false</code>新创建的Scope实例都会被追加到子Scope的尾部，即$$childTail上，并维护好子Scope实例的兄弟关系。</li>
-</ol>
-</li>
-<li><p>$watch</p>
-</li>
-<li><p>$watchCollection</p>
-</li>
-<li>$digest</li>
-<li>$destroy</li>
-<li>$eval</li>
-<li>$evalAsync</li>
-<li>$$postDigest</li>
-<li>$apply</li>
-<li>$on</li>
-<li>$emit</li>
-<li>$broadcast</li>
-</ol>
-<h3 id="-">问题</h3>
-<p>$watch监听的函数式怎么做的轮询
-$$asyncQueue用来缓冲的，那么为什么是$q依赖于$rooScope，而不是$rootScope依赖$q,这样就不需要asyncQueue了。</p>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$sce.html">angular-service-$sce</a></h1></header><section><p><h1 id="-sce">$sce</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$parse</li>
-<li>$sniffer</li>
-<li>$sceDelegate</li>
-</ul>
-<h3 id="-">结构</h3>
-<pre><code>{
-    HTML: &#39;html&#39;,
-    CSS: &#39;css&#39;,
-    URL: &#39;url&#39;,
-    RESOURCE_URL: &#39;resourceUrl&#39;,
-    JS: &#39;js&#39;,
-    isEnabled: {{Function}},
-    trustAs: {{Function}},
-    getTrusted: {{Function}},
-    valueOf: {{function}},
-    parseAs: {{Function}},
-    parse_as_html: {{Function}},
-    get_trusted_html: {{Function}},
-    trust_as_html: {{Function}},
-    parse_as_css: {{Function}},
-    get_trusted_css: {{Function}},
-    trust_as_css: {{Function}},
-    parse_as_url: {{Function}},
-    get_trusted_url: {{Function}},
-    trust_as_url: {{Function}},
-    parse_as_resourceUrl: {{Function}},
-    get_trusted_resourceUrl: {{Function}},
-    trust_as_resourceUrl: {{Function}},
-    parse_as_js: {{Function}},
-    get_trusted_js: {{Function}},
-    trust_as_js: {{Function}},
-}
-</code></pre></p></section></article><article><header><h1><a href="angular-service/angular-service-$sniffer.html">angular-service-$sniffer</a></h1></header><section><p><h1 id="-sniffer">$sniffer</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$window</li>
-<li>$document</li>
-</ul>
-<h3 id="this-get-">this.$get函数</h3>
-<pre><code>this.$get = [&#39;$window&#39;, &#39;$document&#39;, function ($window, $document) {
-    return {
-        history: !!($window.history &amp;&amp; $window.history.pushState &amp;&amp; !(android &lt; 4) &amp;&amp; !boxee),
-        hashchange: &#39;onhashchange&#39; in $window &amp;&amp; (!documentMode || documentMode &gt; 7),
-        hasEvent: function (event) {
-            if (event == &#39;input&#39; &amp;&amp; msie == 9) return false;
-            if (isUndefined(eventSupport[event])) {
-                var divElm = document.createElement(&#39;div&#39;);
-                eventSupport[event] = &#39;on&#39; + event in divElm;
-            }
-            return eventSupport[event];
-        },
-        csp: csp(),
-        vendorPrefix: vendorPrefix,
-        transitions: transitions,
-        animations: animations,
-        android: android,
-        msie: msie,
-        msieDocumentMode: documentMode
-    };
-}];
-</code></pre><h3 id="-">问题</h3>
-<p>csp是什么？
-hashChange的兼容性</p>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$templateCache.html">angular-service-$templateCache</a></h1></header><section><p><h1 id="-templatecache">$templateCache</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$cacheFactory</li>
-</ul>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$timeout.html">angular-service-$timeout</a></h1></header><section><p><h1 id="-timeout">$timeout</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>$rootScope</li>
-<li>$browser</li>
-<li>$q</li>
-<li>$exceptionHandler</li>
-</ul>
-</p></section></article><article><header><h1><a href="angular-service/angular-service-$window.html">angular-service-$window</a></h1></header><section><p><h1 id="-window">$window</h1>
-<h2 id="-">根作用域服务</h2>
-<h3 id="-">服务依赖</h3>
-<ul>
-<li>（无依赖）</li>
-</ul>
-<h3 id="get-">get函数代码</h3>
-<pre><code>this.$get = valueFn(window);
-</code></pre><h3 id="ooscript">OOScript</h3>
-<pre><code>this.$get-&gt;
-    &gt;: valueFn(window)
+$injector
+$window
 
-    ^: value:-&gt;
-        @: value
-        &gt;: -&gt;@value
-</code></pre></p></section></article></article></section>    </body>
+this.$</p></section></article><article><header><h1><a href="angular-service/angular-service-$document.html">angular-service-$document</a></h1></header><section><p>$document
+根作用域服务
+服务依赖
+
+$window
+
+get函数代码
+this.$get </p></section></article><article><header><h1><a href="angular-service/angular-service-$exceptionHandler.html">angular-service-$exceptionHandler</a></h1></header><section><p>$exceptionHandler
+根作用域服务
+服务依赖
+
+$log
+
+this.$get函数
+t</p></section></article><article><header><h1><a href="angular-service/angular-service-$filter.html">angular-service-$filter</a></h1></header><section><p>$filter
+根作用域服务
+服务依赖
+
+$injector
+
+this.$get函数
+ this.</p></section></article><article><header><h1><a href="angular-service/angular-service-$http.html">angular-service-$http</a></h1></header><section><p>$http
+根作用域服务
+服务依赖
+
+$httpBackend
+$browser
+$cacheFac</p></section></article><article><header><h1><a href="angular-service/angular-service-$httpBackend.html">angular-service-$httpBackend</a></h1></header><section><p>$httpBackend
+根作用域服务
+服务依赖
+
+$browser
+$window
+$docume</p></section></article><article><header><h1><a href="angular-service/angular-service-$interpolate.html">angular-service-$interpolate</a></h1></header><section><p>$interpolate
+根作用域服务
+服务依赖
+
+$parse
+$exceptionHandler</p></section></article><article><header><h1><a href="angular-service/angular-service-$interval.html">angular-service-$interval</a></h1></header><section><p>$interval
+根作用域服务
+服务依赖
+
+$rootScope
+$window
+$q
+
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$location.html">angular-service-$location</a></h1></header><section><p>$location
+根作用域服务
+服务依赖
+
+$rootScope
+$browser
+$sniffe</p></section></article><article><header><h1><a href="angular-service/angular-service-$log.html">angular-service-$log</a></h1></header><section><p>$log
+根作用域服务
+服务依赖
+
+$window
+
+get函数代码
+this.$get = ['$</p></section></article><article><header><h1><a href="angular-service/angular-service-$parse.html">angular-service-$parse</a></h1></header><section><p>$parse
+根作用域服务
+服务依赖
+
+$filter
+$sniffer
+$log
+
+this.$g</p></section></article><article><header><h1><a href="angular-service/angular-service-$q.html">angular-service-$q</a></h1></header><section><p>$q
+根作用域服务
+服务依赖
+
+$rootScope
+$exceptionHandlerthis.$</p></section></article><article><header><h1><a href="angular-service/angular-service-$rootScope.html">angular-service-$rootScope</a></h1></header><section><p>$rootScope
+根作用域服务
+服务依赖
+
+$injector
+$exceptionHandle</p></section></article><article><header><h1><a href="angular-service/angular-service-$sce.html">angular-service-$sce</a></h1></header><section><p>$sce
+根作用域服务
+服务依赖
+
+$parse
+$sniffer
+$sceDelegate
+
+结构</p></section></article><article><header><h1><a href="angular-service/angular-service-$sniffer.html">angular-service-$sniffer</a></h1></header><section><p>$sniffer
+根作用域服务
+服务依赖
+
+$window
+$document
+
+this.$get</p></section></article><article><header><h1><a href="angular-service/angular-service-$templateCache.html">angular-service-$templateCache</a></h1></header><section><p>$templateCache
+根作用域服务
+服务依赖
+
+$cacheFactory
+
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$timeout.html">angular-service-$timeout</a></h1></header><section><p>$timeout
+根作用域服务
+服务依赖
+
+$rootScope
+$browser
+$q
+$exce</p></section></article><article><header><h1><a href="angular-service/angular-service-$window.html">angular-service-$window</a></h1></header><section><p>$window
+根作用域服务
+服务依赖
+
+（无依赖）
+
+get函数代码
+this.$get = va</p></section></article></article></section>    </body>
 </html>

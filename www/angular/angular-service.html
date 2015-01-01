@@ -23,7 +23,14 @@ $timeout
 
 结构
 {f
-    @fn</p></section></article><article><header><h1><a href="angular-service/angular-service-$$sanitizeUri.html">angular-service-$$sanitizeUri</a></h1></header><section><p>$$sanitizeUri
+    @fn: %f,
+    = {f
+
+    }
+}
+问题
+requestAnimationFrame是什么函数及其怎么用？
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$$sanitizeUri.html">angular-service-$$sanitizeUri</a></h1></header><section><p>$$sanitizeUri
 根作用域服务
 服务依赖
 </p></section></article><article><header><h1><a href="angular-service/angular-service-$SceDelegate.html">angular-service-$SceDelegate</a></h1></header><section><p>$SceDelegate
@@ -33,13 +40,20 @@ $timeout
 $injector
 
 this.$get函数
-t</p></section></article><article><header><h1><a href="angular-service/angular-service-$anchorScroll.html">angular-service-$anchorScroll</a></h1></header><section><p>$anchorScroll
+this.$get = = ['$injector', function ($injector) {
+    return { 
+        trustAs: trustAs,
+        getTrusted: getTrusted,
+        valueOf: valueOf
+   </p></section></article><article><header><h1><a href="angular-service/angular-service-$anchorScroll.html">angular-service-$anchorScroll</a></h1></header><section><p>$anchorScroll
 根作用域服务
 服务依赖
 
 $window
 $location
-$root</p></section></article><article><header><h1><a href="angular-service/angular-service-$animate.html">angular-service-$animate</a></h1></header><section><p>$animate
+$rootScope
+
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$animate.html">angular-service-$animate</a></h1></header><section><p>$animate
 根作用域服务
 服务依赖
 
@@ -53,7 +67,12 @@ $$asyncCallback
 $window
 $log
 $sniffer
-$docum</p></section></article><article><header><h1><a href="angular-service/angular-service-$cacheFactory.html">angular-service-$cacheFactory</a></h1></header><section><p>$cacheFactory
+$document
+
+this.$get函数
+this.$get = ['$window', '$log', '$sniffer', '$document',
+    function ($window, $log, $sniffer, $document) {
+        return new Brows</p></section></article><article><header><h1><a href="angular-service/angular-service-$cacheFactory.html">angular-service-$cacheFactory</a></h1></header><section><p>$cacheFactory
 根作用域服务
 服务依赖
 
@@ -61,58 +80,123 @@ $docum</p></section></article><article><header><h1><a href="angular-service/angu
 
 结构
 {{function}
- </p></section></article><article><header><h1><a href="angular-service/angular-service-$compile.html">angular-service-$compile</a></h1></header><section><p>$compile
+    info: {{function}},
+    get: {{function}}
+}
+
+
+
+{f
+    @name: %f,
+    @type: %f,
+    ^state: %b,
+    ^data: %n,
+    ^capacity: %n,
+    ^lruHash: %a,</p></section></article><article><header><h1><a href="angular-service/angular-service-$compile.html">angular-service-$compile</a></h1></header><section><p>$compile
 根作用域服务
 服务依赖
 
 $injector
 $interpolate
-$exce</p></section></article><article><header><h1><a href="angular-service/angular-service-$controller.html">angular-service-$controller</a></h1></header><section><p>$controller
+$exceptionHandler
+$http
+$templateCache
+$controller
+$rootScope
+$document
+$sce
+$animate
+$$sanitizeUri
+
+结构
+this.$get:->
+    @: $injector,$interpolate,$excepti</p></section></article><article><header><h1><a href="angular-service/angular-service-$controller.html">angular-service-$controller</a></h1></header><section><p>$controller
 根作用域服务
 服务依赖
 
 $injector
 $window
 
-this.$</p></section></article><article><header><h1><a href="angular-service/angular-service-$document.html">angular-service-$document</a></h1></header><section><p>$document
+this.$get函数代码
+this.$get = ['$injector', '$window', function ($injector, $window) {
+    return {{Function}}
+}];
+#
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$document.html">angular-service-$document</a></h1></header><section><p>$document
 根作用域服务
 服务依赖
 
 $window
 
 get函数代码
-this.$get </p></section></article><article><header><h1><a href="angular-service/angular-service-$exceptionHandler.html">angular-service-$exceptionHandler</a></h1></header><section><p>$exceptionHandler
+this.$get = ['$window', function (window) {
+        return jqLite(window.document);
+    }];
+service结构
+{
+    __proto__: { // 此处表示原型链上的属性和方法
+
+    }
+}
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$exceptionHandler.html">angular-service-$exceptionHandler</a></h1></header><section><p>$exceptionHandler
 根作用域服务
 服务依赖
 
 $log
 
 this.$get函数
-t</p></section></article><article><header><h1><a href="angular-service/angular-service-$filter.html">angular-service-$filter</a></h1></header><section><p>$filter
+this.$get = ['$log', function ($log) {
+    return function (exception, cause) {
+        $log.error.apply($log, arguments);
+    };
+}];
+问题
+参数个数，同$log中的问题</p></section></article><article><header><h1><a href="angular-service/angular-service-$filter.html">angular-service-$filter</a></h1></header><section><p>$filter
 根作用域服务
 服务依赖
 
 $injector
 
 this.$get函数
- this.</p></section></article><article><header><h1><a href="angular-service/angular-service-$http.html">angular-service-$http</a></h1></header><section><p>$http
+ this.$get = ['$injector', function ($injector) {
+    return function (name) {
+        return $injector.get(name + 'Filter');
+    };
+ }];
+问题
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$http.html">angular-service-$http</a></h1></header><section><p>$http
 根作用域服务
 服务依赖
 
 $httpBackend
 $browser
-$cacheFac</p></section></article><article><header><h1><a href="angular-service/angular-service-$httpBackend.html">angular-service-$httpBackend</a></h1></header><section><p>$httpBackend
+$cacheFactory
+$rootScope
+$q
+$injector
+
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$httpBackend.html">angular-service-$httpBackend</a></h1></header><section><p>$httpBackend
 根作用域服务
 服务依赖
 
 $browser
 $window
-$docume</p></section></article><article><header><h1><a href="angular-service/angular-service-$interpolate.html">angular-service-$interpolate</a></h1></header><section><p>$interpolate
+$document
+this.$get函数
+  this.$get = ['$browser', '$window', '$document', function ($browser, $window, $document) {
+  return createHttpBackend($browser, creat</p></section></article><article><header><h1><a href="angular-service/angular-service-$interpolate.html">angular-service-$interpolate</a></h1></header><section><p>$interpolate
 根作用域服务
 服务依赖
 
 $parse
-$exceptionHandler</p></section></article><article><header><h1><a href="angular-service/angular-service-$interval.html">angular-service-$interval</a></h1></header><section><p>$interval
+$exceptionHandler
+$sce
+
+结构
+{
+
+}
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$interval.html">angular-service-$interval</a></h1></header><section><p>$interval
 根作用域服务
 服务依赖
 
@@ -126,14 +210,32 @@ $q
 
 $rootScope
 $browser
-$sniffe</p></section></article><article><header><h1><a href="angular-service/angular-service-$log.html">angular-service-$log</a></h1></header><section><p>$log
+$sniffer
+$rootElement
+
+结构
+{
+    $$html5: {{boolean}},
+    $$url: {{string}},
+    $$absUrl: {{string}},
+    $$search: {{string}},
+    $$hash: {{string}},
+    </p></section></article><article><header><h1><a href="angular-service/angular-service-$log.html">angular-service-$log</a></h1></header><section><p>$log
 根作用域服务
 服务依赖
 
 $window
 
 get函数代码
-this.$get = ['$</p></section></article><article><header><h1><a href="angular-service/angular-service-$parse.html">angular-service-$parse</a></h1></header><section><p>$parse
+this.$get = ['$window', function ($window) {
+        return {
+            log: {{function}},
+
+            info: {{function}},
+
+            warn: {{function}},
+
+     </p></section></article><article><header><h1><a href="angular-service/angular-service-$parse.html">angular-service-$parse</a></h1></header><section><p>$parse
 根作用域服务
 服务依赖
 
@@ -141,17 +243,34 @@ $filter
 $sniffer
 $log
 
-this.$g</p></section></article><article><header><h1><a href="angular-service/angular-service-$q.html">angular-service-$q</a></h1></header><section><p>$q
+this.$get函数
+this.$get = ['$filter', '$sniffer', '$log', function ($filter, $sniffer, $log) {
+    return {{Function}}  
+}
+代码
+分两个部分Lexer(词法解析器)和Parser(语法解析器)
+L</p></section></article><article><header><h1><a href="angular-service/angular-service-$q.html">angular-service-$q</a></h1></header><section><p>$q
 根作用域服务
 服务依赖
 
 $rootScope
-$exceptionHandlerthis.$</p></section></article><article><header><h1><a href="angular-service/angular-service-$rootScope.html">angular-service-$rootScope</a></h1></header><section><p>$rootScope
+$exceptionHandlerthis.$get函数
+
+
+this.$get = ['$rootScope', '$exceptionHandler', function ($rootScope, $exceptionHandler) {
+    return qFactory(function (callback) {
+        $</p></section></article><article><header><h1><a href="angular-service/angular-service-$rootScope.html">angular-service-$rootScope</a></h1></header><section><p>$rootScope
 根作用域服务
 服务依赖
 
 $injector
-$exceptionHandle</p></section></article><article><header><h1><a href="angular-service/angular-service-$sce.html">angular-service-$sce</a></h1></header><section><p>$sce
+$exceptionHandler
+$parse
+$browserthis.$get函数
+
+
+this.$get = ['$injector', '$exceptionHandler', '$parse', '$browser',
+    function ($injector, $exceptionHandler, $parse</p></section></article><article><header><h1><a href="angular-service/angular-service-$sce.html">angular-service-$sce</a></h1></header><section><p>$sce
 根作用域服务
 服务依赖
 
@@ -159,14 +278,25 @@ $parse
 $sniffer
 $sceDelegate
 
-结构</p></section></article><article><header><h1><a href="angular-service/angular-service-$sniffer.html">angular-service-$sniffer</a></h1></header><section><p>$sniffer
+结构
+{
+    HTML: 'html',
+    CSS: 'css',
+    URL: 'url',
+    RESOURCE_URL: 'resourceUrl',
+    JS: 'js',
+    isEnabled: {{Function}},
+    trustAs: {{Functi</p></section></article><article><header><h1><a href="angular-service/angular-service-$sniffer.html">angular-service-$sniffer</a></h1></header><section><p>$sniffer
 根作用域服务
 服务依赖
 
 $window
 $document
 
-this.$get</p></section></article><article><header><h1><a href="angular-service/angular-service-$templateCache.html">angular-service-$templateCache</a></h1></header><section><p>$templateCache
+this.$get函数
+this.$get = ['$window', '$document', function ($window, $document) {
+    return {
+        history: !!($window.history && $window.history.pushState </p></section></article><article><header><h1><a href="angular-service/angular-service-$templateCache.html">angular-service-$templateCache</a></h1></header><section><p>$templateCache
 根作用域服务
 服务依赖
 
@@ -179,12 +309,22 @@ $cacheFactory
 $rootScope
 $browser
 $q
-$exce</p></section></article><article><header><h1><a href="angular-service/angular-service-$window.html">angular-service-$window</a></h1></header><section><p>$window
+$exceptionHandler
+
+</p></section></article><article><header><h1><a href="angular-service/angular-service-$window.html">angular-service-$window</a></h1></header><section><p>$window
 根作用域服务
 服务依赖
 
 （无依赖）
 
 get函数代码
-this.$get = va</p></section></article></article></section>    </body>
+this.$get = valueFn(window);
+OOScript
+this.$get->
+    >: valueFn(window)
+
+    ^: value:->
+        @: value
+        >: ->@value
+</p></section></article></article></section>    </body>
 </html>

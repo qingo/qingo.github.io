@@ -8,12 +8,9 @@
   "dependencies": {
     "gulp": "^3.8.10",
     "gulp-blog": "^0.1.0",
-    "gulp-file2json": "0.0.2",
-    "gulp-footer": "^1.0.5",
-    "gulp-header": "^1.2.2",
     "gulp-markdown": "^1.0.0",
-    "gulp-rename": "^1.2.0",
-    "through2": "^0.6.3"
+    "gulp-fix": "0.0.1"
   },
+  "homepage": "http://qingo.me",
   "scripts": {}
 }

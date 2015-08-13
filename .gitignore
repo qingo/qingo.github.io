@@ -32,10 +32,3 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 
 node_modules/
-*.md
-md2html.js
-parser.js
-SyntacticalParser.js
-html.prefix
-html.suffix
-LexicalParser.js

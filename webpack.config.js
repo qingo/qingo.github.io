@@ -1,16 +1,10 @@
 module.exports = {
 	entry: {
-		//build: './src/index.js',
-		Timeline: './src/timeline/timeline.js',
-		Chart: './src/charts/chart.js'
-
-		//style: './src/theme/default/theme.less'
+		index: './src/templates/index.js'
 	},
 	output: {
 		filename: './[name].js',
-		path: './dist/module',
-		library: ["MjVI", "[name]"],
-		libraryTarget: "umd"
+		path: './dist'
 	},
 	devtool: 'source-map',
 	module: {

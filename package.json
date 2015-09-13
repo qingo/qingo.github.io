@@ -5,7 +5,9 @@
     "type": "git",
     "url": "https://github.com/qingo/qingo.github.io.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "marked": "^0.3.5"
+  },
   "homepage": "http://qingo.me",
   "scripts": {},
   "devDependencies": {

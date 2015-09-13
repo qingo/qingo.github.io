@@ -9,10 +9,12 @@ root
   |-- index
   |     |-- header
   |     |-- preview
-  |     |-- footer
   |     |-- sidebar
+  |     `-- footer
   |-- detail
   |     |-- header
   |     |-- article
   |     |-- sidebar
+  |     `-- footer
 ```
+

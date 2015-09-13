@@ -20,7 +20,6 @@ const Configs = {
 
 export default class Request {
     constructor(options = {}) {
-        super();
         options = extend(options, Configs);
         this.url = options.url || URL.location;
         this.dataType = options.dataType;

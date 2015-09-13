@@ -99,6 +99,4 @@ export default class Emitter {
         }
         return true;
     }
-
-
 }

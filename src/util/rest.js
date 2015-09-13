@@ -1,12 +1,11 @@
 // 参考 restangular的设计封装数据接口(https://github.com/mgonto/restangular)
 import Request from './request'
-import { Emitter } from './emitter'
+import Emitter from './emitter'
 import URL from './url'
 
-
-
 export default class Rest extends Emitter {
-    constructor(url, type) {
+    constructor(url) {
+        super();
         this.url = new URL(url);
 
     }

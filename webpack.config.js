@@ -1,6 +1,7 @@
 module.exports = {
 	entry: {
-		index: './src/templates/index.js'
+		index: './src/templates/index.jsx',
+		detail: './src/templates/detail.jsx'
 	},
 	output: {
 		filename: './[name].js',
@@ -10,7 +11,7 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.js$/,
+				test: /\.jsx?$/,
 				loader: 'babel?stage=0'
 			}, {
 				test: /\.less$/,
@@ -25,7 +26,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['', '.js', '.json', '.coffee']
+		extensions: ['', '.js', '.json', '.jsx']
 	},
 
 	watch: true

@@ -1,5 +1,5 @@
 import { extend, clone } from './object'
-import { URL } from './url'
+import URL from './url'
 const Configs = {
     type: 'GET',
     beforeSend: empty,

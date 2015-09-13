@@ -12,7 +12,7 @@
 import type from './type'
 import object from './object'
 
-class URLSearchParams {
+export class URLSearchParams {
     constructor(query) {
         var list = query.split('&'),
             params = this._params = {};
@@ -55,15 +55,15 @@ class URLSearchParams {
     }
 }
 
-class URL {
+export default class URL {
     constructor(url) {
         var a;
         if (type.isLocation(url)) {
             a = url;
         } else if (type.isString(url)) {
             if (window.URL) {
-                Object.keys(URL.prototype).forEach( key => {
-                    if (key !== 'toString' && key !== 'constructor'){
+                Object.keys(URL.prototype).forEach(key => {
+                    if (key !== 'toString' && key !== 'constructor') {
                         window.URL.prototype[key] = this[key];
                         console.log()
                     }
@@ -108,7 +108,7 @@ class URL {
         var query = '';
         if (type.isString(pathname)) {
             this.pathname = pathname;
-        }else{
+        } else {
             params = pathname
         }
         Object.keys(params).forEach(function (key) {
@@ -117,7 +117,3 @@ class URL {
         return [this.origin, this.pathname, this.hash, '?', query].join('').slice(0, -1);
     }
 }
-
-URL.URLSearchParams = URLSearchParams;
-URL.location= new URL(location);
-export default URL;
